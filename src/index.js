@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 
+
 //Router imports
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -13,6 +14,8 @@ import Footer from "./elements/Footer";
 //routes
 import ErrorPage from "./routes/ErrorPage";
 import Root from "./routes/Root";
+import MainDecks from "./routes/MainDecks";
+import NewDecks from "./routes/NewDecks";
 import OutdatedDecks from "./routes/OutdatedDecks";
 
 import reportWebVitals from "./reportWebVitals";
@@ -26,8 +29,16 @@ const r_router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "outdated",
+        path: "maindecks",
+        element: <MainDecks />
+      },
+      {
+        path: "outdateddecks",
         element: <OutdatedDecks />
+      },
+      {
+        path: "newdecks",
+        element: <NewDecks />
       }
     ]
   }
