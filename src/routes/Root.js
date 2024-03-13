@@ -6,7 +6,6 @@ const Root = () => {
     return(
         <>
         <div style={Container}>
-            <p>This will work like a nav-bar</p>
             <ul>
                 <li style={ListElement}>
                     <Link to={'/maindecks'}>Home</Link>
@@ -20,7 +19,7 @@ const Root = () => {
             </ul>
         </div>
 
-        <div>
+        <div style={Content}>
             <Outlet />
         </div>
         </>
@@ -32,13 +31,17 @@ export default Root;
 
 const Container = {
     display: 'flex',
-    margin: 0
+    margin: 0,
+    backgroundColor: '#D77272'
+
 }
-
-
 
 const ListElement = {
     display: 'inline',
-    paddingLeft: '20px',
     paddingRight: '20px'
+}
+
+const Content = {
+    minHeight: '500px',
+    backgroundColor: '#72BFD7'
 }
