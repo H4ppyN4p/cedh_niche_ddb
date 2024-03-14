@@ -7,7 +7,7 @@ import { app } from "../firebase";
 
 const Root = () => {
 
-    console.log(app, null, 4)
+    console.log(app)
 
     return(
         <>
