@@ -18,6 +18,8 @@ import MainDecks from "./routes/MainDecks";
 import NewDecks from "./routes/NewDecks";
 import OutdatedDecks from "./routes/OutdatedDecks";
 
+//firebase
+
 import reportWebVitals from "./reportWebVitals";
 
 

@@ -1,8 +1,14 @@
 import { Outlet, Link } from "react-router-dom";
 import '../baseStyle.css'
 
+//Firebase
+import { app } from "../firebase";
+
 
 const Root = () => {
+
+    console.log(app, null, 4)
+
     return(
         <>
         <div style={Container}>
