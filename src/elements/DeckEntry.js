@@ -3,7 +3,9 @@ const DeckEntry = (props) => {
     return(
         <>
         <ul style={DeckEntryStyle}>
+            
             <li>{props.deck_author}</li>
+            <li>deck color: {props.deck_colour}</li>
             <li>{props.deck_commander_one}</li>
             <li>{props.deck_commander_two}</li>
             <li>{props.deck_description}</li>

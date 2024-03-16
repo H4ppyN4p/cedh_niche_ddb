@@ -21,6 +21,7 @@ import OutdatedDecks from "./routes/OutdatedDecks";
 //firebase
 
 import reportWebVitals from "./reportWebVitals";
+import CreateDeck from "./routes/CreateDeck";
 
 
 //Router object:
@@ -41,6 +42,10 @@ const r_router = createBrowserRouter([
       {
         path: "newdecks",
         element: <NewDecks />
+      },
+      {
+        path: "createdecks",
+        element: <CreateDeck />
       }
     ]
   }

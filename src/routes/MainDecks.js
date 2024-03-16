@@ -9,6 +9,8 @@ const MainDecks = () => {
     const [values, loading, error] = useCollection(collection(database, 'decks_mainlist'))
     const data = values?.docs.map(doc => ({...doc.data(), id: doc.id}))
 
+    console.log(data)
+
 
     return(
         <>
@@ -17,7 +19,9 @@ const MainDecks = () => {
             {data && data.map((e) => {
                 return (
                     <DeckEntry 
+                        key={e.id}
                         author={e.deck_author} 
+                        deck_colour={e.deck_colour}
                         deck_commander_one={e.deck_commander_one}
                         deck_commander_two={e.deck_commander_two}
                         deck_description={e.deck_description}
