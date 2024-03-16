@@ -2,12 +2,13 @@ import { Outlet, Link } from "react-router-dom";
 import '../baseStyle.css'
 
 //Firebase
-import { app } from "../firebase";
+import { app, database } from "../firebase";
+import { collection, addDoc } from 'firebase/firestore'
 
 
 const Root = () => {
 
-    console.log(app)
+    //console.log(JSON.stringify(database, null, 4))
 
     return(
         <>
