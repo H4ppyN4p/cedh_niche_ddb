@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import { doc, setDoc, collection } from "firebase/firestore";
+import { database } from "../firebase";
 
 const CreateDeck = () => {
 
@@ -21,6 +22,36 @@ const CreateDeck = () => {
       deckDescription, ' + ',
       deckLink)
   }
+
+  /*
+     await setDoc(doc(db, 'decks_mainlist', deckName), {
+          deck_author: deckAuthor,
+          deck_colour: deckColour,
+          deck_commander_one: commanderOne,
+          deck_description: deckDescription,
+          deck_link: deckLink,
+  */
+
+  async function addNewDocToDB(){
+
+      if (commanderTwo != '') {
+        await setDoc(doc(database, 'decks_mainlist', deckName), {
+          deck_author: deckAuthor,
+          deck_colour: deckColour,
+          deck_commander_one: commanderOne,
+          deck_commander_two: commanderTwo,
+          deck_description: deckDescription,
+          deck_link: deckLink
+        }); 
+      } else {
+        await setDoc(doc(database, 'decks_mainlist', deckName), {
+          deck_author: deckAuthor,
+          deck_colour: deckColour,
+          deck_commander_one: commanderOne,
+          deck_description: deckDescription,
+          deck_link: deckLink
+        });
+      }}
 
     return (
         <>
@@ -61,7 +92,7 @@ const CreateDeck = () => {
               <input type="text" name="DeckLink" value={deckLink} onInput={e => setDeckLink(e.target.value)}/>
             </div>
 
-            <button onClick={onButtonClickink}>Button to send text</button>
+            <button onClick={addNewDocToDB}>Button to send text</button>
           </div>
         </div>
         </>
