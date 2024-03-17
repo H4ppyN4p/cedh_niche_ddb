@@ -10,20 +10,72 @@ const CreateDeck = () => {
     const [commanderTwo, setCommanderTwo] = useState('')
     const [deckDescription, setDeckDescription] = useState('')
     const [deckLink, setDeckLink] = useState('')
-
-    function addNewDeck(){
-
-    }
-
-    function sendToConsole(){
-
-    }
+  
+  function onButtonClickink(){
+    console.log(
+      deckName, ' + ', 
+      deckAuthor, ' + ', 
+      deckColour, ' + ',
+      commanderOne, ' + ',
+      commanderTwo, ' + ',
+      deckDescription, ' + ',
+      deckLink)
+  }
 
     return (
         <>
-          <input name="MyDeckName" value={deckName} onInput={e => setDeckName(e.target.value)} onChange={console.log(deckName)}/>
+        <div style={Container}>
+          <div style={FormStyle}>
+            <div>
+              <label htmlFor='DeckName'>Deck Name: </label>
+              <input type="text" name="DeckName" value={deckName} onInput={e => setDeckName(e.target.value)}/>
+            </div>
+
+            <div>
+              <label htmlFor='DeckAuthor'>Deck Author(s): </label>
+              <input type="text" name="DeckAuthor" value={deckAuthor} onInput={e => setDeckAuthor(e.target.value)}/>
+            </div>
+
+            <div>
+              <label htmlFor='DeckColour'>Deck Colour: </label>
+              <input type="text" name="Deck Colour" value={deckColour} onInput={e => setDeckColour(e.target.value)}/>
+            </div>
+            
+            <div>
+              <label htmlFor='CommanderOne'>Commander One: </label>
+              <input type="text" name="CommanderOne" value={commanderOne} onInput={e => setCommanderOne(e.target.value)}/>
+            </div>
+
+            <div>
+              <label htmlFor='CommanderTwo'>Commander Two (if any): </label>
+              <input type="text" name="CommanderTwo" value={commanderTwo} onInput={e => setCommanderTwo(e.target.value)}/>
+            </div>
+
+            <div>
+              <label htmlFor='DeckDescription'>Short Description of the deck: </label>
+              <input type="text" name="DeckDescription" value={deckDescription} onInput={e => setDeckDescription(e.target.value)}/>
+            </div>
+
+            <div>
+              <label htmlFor='DeckLink'>Link to the deck-list: </label>
+              <input type="text" name="DeckLink" value={deckLink} onInput={e => setDeckLink(e.target.value)}/>
+            </div>
+
+            <button onClick={onButtonClickink}>Button to send text</button>
+          </div>
+        </div>
         </>
     )
 }
 
 export default CreateDeck;
+
+const Container = {
+  display: 'flex',
+  border: '2px solid green'
+}
+
+const FormStyle = {
+  display: 'flex',
+  flexDirection: 'column'
+}
