@@ -22,6 +22,7 @@ import OutdatedDecks from "./routes/OutdatedDecks";
 
 import reportWebVitals from "./reportWebVitals";
 import CreateDeck from "./routes/CreateDeck";
+import SignIn from "./routes/SignIn";
 
 
 //Router object:
@@ -46,6 +47,10 @@ const r_router = createBrowserRouter([
       {
         path: "createdecks",
         element: <CreateDeck />
+      },
+      {
+        path: "signin",
+        element: <SignIn />
       }
     ]
   }

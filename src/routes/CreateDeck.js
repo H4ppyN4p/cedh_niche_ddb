@@ -12,15 +12,15 @@ const CreateDeck = () => {
     const [deckDescription, setDeckDescription] = useState('')
     const [deckLink, setDeckLink] = useState('')
   
-  function onButtonClickink(){
-    console.log(
-      deckName, ' + ', 
-      deckAuthor, ' + ', 
-      deckColour, ' + ',
-      commanderOne, ' + ',
-      commanderTwo, ' + ',
-      deckDescription, ' + ',
-      deckLink)
+  function clearInputs(){
+    
+      setDeckName('')
+      setDeckAuthor('') 
+      setDeckColour('')
+      setCommanderOne('')
+      setCommanderTwo('')
+      setDeckDescription('')
+      setDeckLink('')
   }
 
   /*
@@ -51,7 +51,9 @@ const CreateDeck = () => {
           deck_description: deckDescription,
           deck_link: deckLink
         });
-      }}
+      }
+        clearInputs()
+    }
 
     return (
         <>
