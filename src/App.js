@@ -23,7 +23,7 @@ import { useAuthState } from "react-firebase-hooks/auth"
 //firebase hooks
 
 //loader functions
-import {onMainDeckLoad as mainLoader, onMainDeckLoad} from "./LoaderFunctions"
+import {checkAuthCredent} from "./LoaderFunctions"
 
 
 
@@ -37,7 +37,6 @@ const r_router = createBrowserRouter([
         {
           path: "maindecks",
           element: <MainDecks />,
-          loader: mainLoader
         },
         {
           path: "outdateddecks",
@@ -50,6 +49,7 @@ const r_router = createBrowserRouter([
         {
           path: "createdecks",
           element: <CreateDeck />,
+          loader: checkAuthCredent
         },
         {
           path: "signin",

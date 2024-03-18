@@ -1,5 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import '../baseStyle.css'
+import { auth } from "../firebase";
 
 //Firebase
 import { app, database } from "../firebase";
@@ -24,6 +25,21 @@ const Root = () => {
                 <li style={ListElement}>
                     <Link to={'/newdecks'}>New Decks</Link>
                 </li>
+
+                { auth.currentUser ? (
+                    <li style={ListElement}>
+                        <Link to={'/createdecks'}>create decks</Link>
+                    </li>
+                    ) : (
+                        <>
+                        <div>
+                            <></>
+                        </div>
+                        </>
+                    )
+                }
+               
+                 
             </ul>
         </div>
 
