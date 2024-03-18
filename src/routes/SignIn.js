@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { auth } from "../firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from "firebase/auth";
 
 const SignIn = () => {
 
@@ -8,13 +8,15 @@ const SignIn = () => {
     const [userPass, setUserPass] = useState('')
 
     function checkCredentials(){
-        console.log(userEmail + ' ' + userPass)
-        signInWithEmailAndPassword(auth, userEmail, userPass)
-        .then((userCredential) => {
-            console.log(userCredential)
-        }).catch((error) => {
-            console.log(error)
-        }) 
+        setPersistence(auth, browserSessionPersistence)
+        .then(() => {
+            signInWithEmailAndPassword(auth, userEmail, userPass)
+            .then((userCredential) => {
+                console.log(userCredential)
+            }).catch((error) => {
+                console.log(error)
+            }) 
+        })
     }
 
     return(
