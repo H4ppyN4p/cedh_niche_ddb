@@ -1,10 +1,7 @@
 import React from "react";
 
 //Router imports
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-
-//Site elements
+import { createBrowserRouter, RouterProvider, Navigate, Outlet, redirect } from "react-router-dom";
 
 //routes
 import ErrorPage from "./routes/ErrorPage";
@@ -13,14 +10,22 @@ import MainDecks from "./routes/MainDecks";
 import NewDecks from "./routes/NewDecks";
 import OutdatedDecks from "./routes/OutdatedDecks";
 import SignIn from "./routes/SignIn";
+import CreateDeck from "./routes/CreateDeck";
+
 
 
 //firebase
+import { auth } from "./firebase";
+import { useAuthState } from "react-firebase-hooks/auth"
+
+//firebase auth
 
 //firebase hooks
 
+//loader functions
+import {onMainDeckLoad as mainLoader, onMainDeckLoad} from "./LoaderFunctions"
 
-import CreateDeck from "./routes/CreateDeck";
+
 
 //Router object:
 const r_router = createBrowserRouter([
@@ -31,7 +36,8 @@ const r_router = createBrowserRouter([
       children: [
         {
           path: "maindecks",
-          element: <MainDecks />
+          element: <MainDecks />,
+          loader: mainLoader
         },
         {
           path: "outdateddecks",
@@ -43,7 +49,7 @@ const r_router = createBrowserRouter([
         },
         {
           path: "createdecks",
-          element: <CreateDeck />
+          element: <CreateDeck />,
         },
         {
           path: "signin",
@@ -53,7 +59,10 @@ const r_router = createBrowserRouter([
     }
   ]);
 
+  
+
 const App = () => {
+
 
     return(
         <>
