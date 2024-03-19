@@ -1,15 +1,31 @@
 import { Outlet, Link } from "react-router-dom";
 import '../baseStyle.css'
 import { auth } from "../firebase";
+import { signOut } from "firebase/auth";
+import { useAuthState, } from "react-firebase-hooks/auth";
 
 //Firebase
 import { app, database } from "../firebase";
 import { collection, addDoc } from 'firebase/firestore'
 
 
+
 const Root = () => {
 
+    const [user, loading] = useAuthState(auth)
+
+    function signOutFromFirebase(){
+        signOut(auth).then(() => {
+            console.log('signout successfull')
+        }).catch((e) => {
+            console.log('something went wrong: ' + e)
+        })
+    }
+
+    
     //console.log(JSON.stringify(database, null, 4))
+
+   
 
     return(
         <>
@@ -26,15 +42,16 @@ const Root = () => {
                     <Link to={'/newdecks'}>New Decks</Link>
                 </li>
 
-                { auth.currentUser ? (
-                    <li style={ListElement}>
-                        <Link to={'/createdecks'}>create decks</Link>
-                    </li>
+              
+                { user ? (
+                        <li style={ListElement}>
+                            <Link to={'/createdecks'}>create decks</Link>
+                            <button onClick={signOutFromFirebase}>Logout</button>
+                        </li>
+                      
                     ) : (
                         <>
-                        <div>
-                            <></>
-                        </div>
+                      
                         </>
                     )
                 }
