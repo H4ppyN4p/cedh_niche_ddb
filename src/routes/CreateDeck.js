@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { doc, setDoc, collection } from "firebase/firestore";
 import { database } from "../firebase";
+import { auth } from "../firebase";
 
 const CreateDeck = () => {
 
@@ -33,26 +34,31 @@ const CreateDeck = () => {
   */
 
   async function addNewDocToDB(){
-
-      if (commanderTwo != '') {
-        await setDoc(doc(database, 'decks_mainlist', deckName), {
-          deck_author: deckAuthor,
-          deck_colour: deckColour,
-          deck_commander_one: commanderOne,
-          deck_commander_two: commanderTwo,
-          deck_description: deckDescription,
-          deck_link: deckLink
-        }); 
-      } else {
-        await setDoc(doc(database, 'decks_mainlist', deckName), {
-          deck_author: deckAuthor,
-          deck_colour: deckColour,
-          deck_commander_one: commanderOne,
-          deck_description: deckDescription,
-          deck_link: deckLink
-        });
+      try{
+        if (commanderTwo != '') {
+        
+          await setDoc(doc(database, 'decks_mainlist', deckName), {
+            deck_author: deckAuthor,
+            deck_colour: deckColour,
+            deck_commander_one: commanderOne,
+            deck_commander_two: commanderTwo,
+            deck_description: deckDescription,
+            deck_link: deckLink
+          }); 
+        } else {
+          await setDoc(doc(database, 'decks_mainlist', deckName), {
+            deck_author: deckAuthor,
+            deck_colour: deckColour,
+            deck_commander_one: commanderOne,
+            deck_description: deckDescription,
+            deck_link: deckLink
+          });
+        }
+      } catch(error) {
+        console.log(error)
       }
-        clearInputs()
+      
+        clearInputs() 
     }
 
     return (

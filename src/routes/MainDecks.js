@@ -20,7 +20,7 @@ const MainDecks = () => {
                 return (
                     <DeckEntry 
                         key={e.id}
-                        author={e.deck_author} 
+                        deck_author={e.deck_author} 
                         deck_colour={e.deck_colour}
                         deck_commander_one={e.deck_commander_one}
                         deck_commander_two={e.deck_commander_two}

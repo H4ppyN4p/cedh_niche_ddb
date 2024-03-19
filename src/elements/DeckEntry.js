@@ -2,15 +2,32 @@
 const DeckEntry = (props) => {
     return(
         <>
-        <ul style={DeckEntryStyle}>
-            
-            <li>{props.deck_author}</li>
-            <li>deck color: {props.deck_colour}</li>
-            <li>{props.deck_commander_one}</li>
-            <li>{props.deck_commander_two}</li>
-            <li>{props.deck_description}</li>
-            <li>{props.deck_link}</li>
-        </ul>
+        { props.deck_commander_two ? (
+            <> 
+               <ul style={DeckEntryStyle}>
+                    <li> <p>Deck author : {props.deck_author} </p></li>
+                    <li> <p>deck color : {props.deck_colour} </p></li>
+                    <li> <p>Commander one:  {props.deck_commander_one} </p></li>
+                    <li> <p>Commander two:  {props.deck_commander_two} </p></li>
+                    <li> <p>Deck description: {props.deck_description} </p></li>
+                    <li> <p>Deck link: {props.deck_link} </p></li>
+                </ul>
+            </>
+        ) : (
+            <> 
+                  <ul style={DeckEntryStyle}>
+                    <li> <p>Deck author : {props.deck_author} </p></li>
+                    <li> <p>deck color : {props.deck_colour} </p></li>
+                    <li> <p>Commander one:  {props.deck_commander_one} </p></li>
+                    <li> <p>Deck description: {props.deck_description} </p></li>
+                    <li> <p>Deck link: {props.deck_link} </p></li>
+                </ul>
+            </>
+        )
+
+        }
+
+     
     
         </>
     )
