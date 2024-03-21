@@ -2,16 +2,16 @@ import { collection } from 'firebase/firestore'
 import { useCollection } from 'react-firebase-hooks/firestore'
 import { database } from '../firebase'
 
-import DeckEntry from '../elements/DeckEntryDisplay'
+import DeckEntry from '../elements/DeckEntryDisplayEdit'
 
-const MainDecks = () => {
+const EditDecks = () => {
 
     const [values] = useCollection(collection(database, 'decks_mainlist'))
     const data = values?.docs.map(doc => ({...doc.data(), id: doc.id}))
 
     return(
         <>
-        <div>Main list of decks niche decks</div>
+        <div>Edit page for editing decks</div>
 
             {data && data.map((e) => {
                 return (
@@ -31,4 +31,4 @@ const MainDecks = () => {
     )
 }
 
-export default MainDecks;
+export default EditDecks;

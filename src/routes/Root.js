@@ -5,14 +5,12 @@ import { signOut } from "firebase/auth";
 import { useAuthState, } from "react-firebase-hooks/auth";
 
 //Firebase
-import { app, database } from "../firebase";
-import { collection, addDoc } from 'firebase/firestore'
 
 
 
 const Root = () => {
 
-    const [user, loading] = useAuthState(auth)
+    const [user] = useAuthState(auth)
 
     function signOutFromFirebase(){
         signOut(auth).then(() => {
@@ -45,7 +43,8 @@ const Root = () => {
               
                 { user ? (
                         <li style={ListElement}>
-                            <Link to={'/createdecks'}>create decks</Link>
+                            <Link style={LoggedInStyle} to={'/createdecks'}>Create decks</Link>
+                            <Link style={LoggedInStyle} to={'/editdecks'}>Edit decks</Link>
                             <button onClick={signOutFromFirebase}>Logout</button>
                         </li>
                       
@@ -85,4 +84,8 @@ const ListElement = {
 const Content = {
     minHeight: '500px',
     backgroundColor: '#72BFD7'
+}
+
+const LoggedInStyle = {
+    paddingRight: '20px'
 }
