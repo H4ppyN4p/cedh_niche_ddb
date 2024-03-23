@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { doc, setDoc, collection } from "firebase/firestore";
+import { doc, setDoc} from "firebase/firestore";
 import { database } from "../firebase";
-import { auth } from "../firebase";
 
 const CreateDeck = () => {
 
@@ -33,9 +32,10 @@ const CreateDeck = () => {
           deck_link: deckLink,
   */
 
+
   async function addNewDocToDB(){
       try{
-        if (commanderTwo != '') {
+        if (commanderTwo !== '') {
         
           await setDoc(doc(database, 'decks_mainlist', deckName), {
             deck_author: deckAuthor,

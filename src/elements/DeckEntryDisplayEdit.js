@@ -1,4 +1,4 @@
-import { deleteDoc, doc } from 'firebase/firestore';
+import { deleteDoc, updateDoc, doc } from 'firebase/firestore';
 import { database } from '../firebase';
 import { useState } from 'react';
 
@@ -28,20 +28,43 @@ const DeckEntryDisplayEdit = (props) => {
         }   
     }
 
-    function editDeck(){
-        console.log(props.deck_id)
+    async function updateDeck(){
+        if (window.confirm('Are you sure you want to save this edit?')) {
+
+            try {
+                if (commanderTwo !== undefined) {
+                    await updateDoc(doc(database, 'decks_mainlist', props.deck_id), {
+                        deck_author: deckAuthor,
+                        deck_colour: deckColour,
+                        deck_commander_one: commanderOne,
+                        deck_commander_two: commanderTwo,
+                        deck_description: deckDescription,
+                        deck_link: deckLink
+                    })
+    
+                } else {
+                    await updateDoc(doc(database, 'decks_mainlist', props.deck_id), {
+                        deck_author: deckAuthor,
+                        deck_colour: deckColour,
+                        deck_commander_one: commanderOne,
+                        deck_description: deckDescription,
+                        deck_link: deckLink
+                    })
+                }    
+    
+            } catch(error) {
+                console.log(error)
+            }
+    
+        }       
     }
+
     return(
         <>
         { isEditing ? (
 
-                <div>
+                <div style={DeckEntryStyle}>
                  
-                    <div>
-                        <label htmlFor='DeckName'>Deck Name: </label>
-                        <input type="text" name="DeckName"  value={deckName} onInput={e => setDeckName(e.target.value)}/>
-                        </div>
-
                         <div>
                         <label htmlFor='DeckAuthor'>Deck Author(s): </label>
                         <input type="text" name="DeckAuthor" value={deckAuthor} onInput={e => setDeckAuthor(e.target.value)}/>
@@ -73,6 +96,7 @@ const DeckEntryDisplayEdit = (props) => {
                         </div>
 
                         Edit mode
+                        <button onClick={updateDeck}>Save edit</button>
                         <button onClick={setToEditMode}>Edit</button>
 
                 </div>
