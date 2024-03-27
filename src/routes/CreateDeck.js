@@ -6,31 +6,52 @@ const CreateDeck = () => {
 
     const [deckName, setDeckName] = useState('')
     const [deckAuthor, setDeckAuthor] = useState('')
-    const [deckColour, setDeckColour] = useState('')
     const [commanderOne, setCommanderOne] = useState('')
     const [commanderTwo, setCommanderTwo] = useState('')
     const [deckDescription, setDeckDescription] = useState('')
     const [deckLink, setDeckLink] = useState('')
+    const [isColourless, setIsColourless] = useState(false)
+    const [isWhite, setIsWhite] = useState(false)
+    const [isBlue, setIsBlue] = useState(false)
+    const [isBlack, setIsBlack] = useState(false)
+    const [isRed, setIsRed] = useState(false)
+    const [isGreen, setIsGreen] = useState(false)
+    const [top16, setTop16] = useState('')
+
+    const handleColourless = () => {
+      setIsColourless(!isColourless);
+    }
+
+    const handleWhite = () => {
+      setIsWhite(!isWhite);
+    }
+
+    const handleBlue = () => {
+      setIsBlue(!isBlue);
+    }
+
+    const handleBlack = () => {
+      setIsBlack(!isBlack);
+    }
+
+    const handleRed = () => {
+      setIsRed(!isRed);
+    }
+
+    const handleGreen = () => {
+      setIsGreen(!isGreen);
+    }
+
+ 
   
   function clearInputs(){
-    
       setDeckName('')
       setDeckAuthor('') 
-      setDeckColour('')
       setCommanderOne('')
       setCommanderTwo('')
       setDeckDescription('')
       setDeckLink('')
   }
-
-  /*
-     await setDoc(doc(db, 'decks_mainlist', deckName), {
-          deck_author: deckAuthor,
-          deck_colour: deckColour,
-          deck_commander_one: commanderOne,
-          deck_description: deckDescription,
-          deck_link: deckLink,
-  */
 
 
   async function addNewDocToDB(){
@@ -39,7 +60,6 @@ const CreateDeck = () => {
         
           await setDoc(doc(database, 'decks_mainlist', deckName), {
             deck_author: deckAuthor,
-            deck_colour: deckColour,
             deck_commander_one: commanderOne,
             deck_commander_two: commanderTwo,
             deck_description: deckDescription,
@@ -48,7 +68,6 @@ const CreateDeck = () => {
         } else {
           await setDoc(doc(database, 'decks_mainlist', deckName), {
             deck_author: deckAuthor,
-            deck_colour: deckColour,
             deck_commander_one: commanderOne,
             deck_description: deckDescription,
             deck_link: deckLink
@@ -75,10 +94,6 @@ const CreateDeck = () => {
               <input type="text" name="DeckAuthor" value={deckAuthor} onInput={e => setDeckAuthor(e.target.value)}/>
             </div>
 
-            <div>
-              <label htmlFor='DeckColour'>Deck Colour: </label>
-              <input type="text" name="Deck Colour" value={deckColour} onInput={e => setDeckColour(e.target.value)}/>
-            </div>
             
             <div>
               <label htmlFor='CommanderOne'>Commander One: </label>
@@ -99,6 +114,51 @@ const CreateDeck = () => {
               <label htmlFor='DeckLink'>Link to the deck-list: </label>
               <input type="text" name="DeckLink" value={deckLink} onInput={e => setDeckLink(e.target.value)}/>
             </div>
+          
+
+
+            <div>
+              <p>Choose colours for the deck:</p>
+              <div>
+                <label>Colourless</label>
+                <input type="checkbox" id="colourless" name="colourless" value={isColourless} onChange={handleColourless}/>
+              </div>
+
+              <div>
+                <label>White</label>
+                <input type="checkbox" id="white" name="white" value={isWhite} onChange={handleWhite}/>
+              </div>
+
+              <div>
+                <label>Blue</label>
+                <input type="checkbox" id="blue" name="blue" value={isBlue} onChange={handleBlue}/>
+              </div>
+
+              <div>
+                <label>Black</label>
+                <input type="checkbox" id="black" name="black" value={isBlack} onChange={handleBlack}/>
+              </div>
+
+              <div>
+                <label>Red</label>
+                <input type="checkbox" id="red" name="red" value={isRed} onChange={handleRed}/>
+              </div>
+
+              <div>
+                <label>Green</label>
+                <input type="checkbox" id="green" name="green" value={isGreen} onChange={handleGreen}/>
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor='Tournament Results'>Have this decklist had any 64+ entries tournament results?</label>
+              <select name="Deck Colour" id="DeckColour" onChange={e => setTop16(e.target.value)}>
+                <option value="">No Results</option>
+                <option value="Top 16">Top 16</option>
+                <option value="Top 4">Top 4</option>
+                <option value="Winner">Winner</option>
+              </select>
+            </div>
 
             <button onClick={addNewDocToDB}>Button to send text</button>
           </div>
@@ -106,6 +166,8 @@ const CreateDeck = () => {
         </>
     )
 }
+
+
 
 export default CreateDeck;
 
