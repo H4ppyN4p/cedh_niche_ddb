@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { doc, setDoc} from "firebase/firestore";
+import { doc, addDoc, collection} from "firebase/firestore";
 import { database } from "../firebase";
 
 const CreateDeck = () => {
-
+    const [category, setCategory] = useState('Fringe')
     const [deckName, setDeckName] = useState('')
     const [deckAuthor, setDeckAuthor] = useState('')
     const [commanderOne, setCommanderOne] = useState('')
@@ -51,6 +51,11 @@ const CreateDeck = () => {
       setCommanderTwo('')
       setDeckDescription('')
       setDeckLink('')
+      setIsWhite(false)
+      setIsBlue(false);
+      setIsBlack(false);
+      setIsRed(false)
+      setIsGreen(false)
   }
 
 
@@ -58,19 +63,35 @@ const CreateDeck = () => {
       try{
         if (commanderTwo !== '') {
         
-          await setDoc(doc(database, 'decks_mainlist', deckName), {
+          await addDoc(collection(database, 'decks_mainlist'), {
+            deck_name: deckName,
             deck_author: deckAuthor,
             deck_commander_one: commanderOne,
             deck_commander_two: commanderTwo,
             deck_description: deckDescription,
-            deck_link: deckLink
+            deck_link: deckLink,
+            deck_results: top16,
+            deck_category: category,
+            is_white: isWhite,
+            is_blue: isBlue,
+            is_black: isBlack,
+            is_red: isRed,
+            is_green: isGreen
           }); 
         } else {
-          await setDoc(doc(database, 'decks_mainlist', deckName), {
+          await addDoc(collection(database, 'decks_mainlist'), {
+            deck_name: deckName,
             deck_author: deckAuthor,
             deck_commander_one: commanderOne,
             deck_description: deckDescription,
-            deck_link: deckLink
+            deck_link: deckLink,
+            deck_results: top16,
+            deck_category: category,
+            is_white: isWhite,
+            is_blue: isBlue,
+            is_black: isBlack,
+            is_red: isRed,
+            is_green: isGreen
           });
         }
       } catch(error) {
@@ -84,6 +105,15 @@ const CreateDeck = () => {
         <>
         <div style={Container}>
           <div style={FormStyle}>
+            <div>
+                <label htmlFor='Category'>What category (Meta, Fringe, New Commander) does this deck belong in?</label>
+                <select name="Deck Colour" id="DeckColour" onChange={e => setCategory(e.target.value)}>
+                  <option value="Fringe">Fringe</option>
+                  <option value="Meta">Meta</option>
+                  <option value="New Commander">Winner</option>
+                </select>
+            </div>
+
             <div>
               <label htmlFor='DeckName'>Deck Name: </label>
               <input type="text" name="DeckName" value={deckName} onInput={e => setDeckName(e.target.value)}/>
@@ -117,7 +147,7 @@ const CreateDeck = () => {
           
 
 
-            <div>
+            <div style={{border: '2px solid red'}}>
               <p>Choose colours for the deck:</p>
               <div>
                 <label>Colourless</label>
