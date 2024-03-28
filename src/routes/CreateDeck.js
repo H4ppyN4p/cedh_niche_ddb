@@ -16,7 +16,7 @@ const CreateDeck = () => {
     const [isBlack, setIsBlack] = useState(false)
     const [isRed, setIsRed] = useState(false)
     const [isGreen, setIsGreen] = useState(false)
-    const [top16, setTop16] = useState('')
+    const [top16, setTop16] = useState('None')
 
     const handleColourless = () => {
       setIsColourless(!isColourless);
@@ -63,7 +63,7 @@ const CreateDeck = () => {
       try{
         if (commanderTwo !== '') {
         
-          await addDoc(collection(database, 'decks_mainlist'), {
+          await addDoc(collection(database, 'decklists'), {
             deck_name: deckName,
             deck_author: deckAuthor,
             deck_commander_one: commanderOne,
@@ -79,7 +79,7 @@ const CreateDeck = () => {
             is_green: isGreen
           }); 
         } else {
-          await addDoc(collection(database, 'decks_mainlist'), {
+          await addDoc(collection(database, 'decklists'), {
             deck_name: deckName,
             deck_author: deckAuthor,
             deck_commander_one: commanderOne,
@@ -183,7 +183,7 @@ const CreateDeck = () => {
             <div>
               <label htmlFor='Tournament Results'>Have this decklist had any 64+ entries tournament results?</label>
               <select name="Deck Colour" id="DeckColour" onChange={e => setTop16(e.target.value)}>
-                <option value="">No Results</option>
+                <option value="None">No Results</option>
                 <option value="Top 16">Top 16</option>
                 <option value="Top 4">Top 4</option>
                 <option value="Winner">Winner</option>
