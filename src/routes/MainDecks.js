@@ -2,12 +2,15 @@ import { collection } from 'firebase/firestore'
 import { useCollection } from 'react-firebase-hooks/firestore'
 import { database } from '../firebase'
 
+//Contexts
+import { useDatabaseContext } from '../contexts/DatabaseContextProvider'
+
+//Elements
 import DeckEntry from '../elements/DeckEntryDisplay'
 
 const MainDecks = () => {
 
-    const [values] = useCollection(collection(database, 'decklists'))
-    const data = values?.docs.map(doc => ({...doc.data(), id: doc.id}))
+    const data = useDatabaseContext()
 
     return(
         <>
@@ -25,6 +28,7 @@ const MainDecks = () => {
                         deck_link={e.deck_link} 
                         deck_name={e.deck_name}
                         deck_results={e.deck_results}
+                        is_colourless={e.is_colourless}
                         is_white={e.is_white}
                         is_blue={e.is_blue}
                         is_black={e.is_black}

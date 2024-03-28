@@ -10,6 +10,7 @@ const CreateDeck = () => {
     const [commanderTwo, setCommanderTwo] = useState('')
     const [deckDescription, setDeckDescription] = useState('')
     const [deckLink, setDeckLink] = useState('')
+    const [discordLink, setDiscordLink] = useState('')
     const [isColourless, setIsColourless] = useState(false)
     const [isWhite, setIsWhite] = useState(false)
     const [isBlue, setIsBlue] = useState(false)
@@ -45,17 +46,20 @@ const CreateDeck = () => {
  
   
   function clearInputs(){
-      setDeckName('')
-      setDeckAuthor('') 
-      setCommanderOne('')
-      setCommanderTwo('')
-      setDeckDescription('')
-      setDeckLink('')
-      setIsWhite(false)
-      setIsBlue(false);
-      setIsBlack(false);
-      setIsRed(false)
-      setIsGreen(false)
+    setCategory('Fringe')
+    setDeckName('')
+    setDeckAuthor('') 
+    setCommanderOne('')
+    setCommanderTwo('')
+    setDeckDescription('')
+    setDeckLink('')
+    setIsColourless(false)
+    setIsWhite(false)
+    setIsBlue(false);
+    setIsBlack(false);
+    setIsRed(false)
+    setIsGreen(false)
+    setTop16('None')
   }
 
 
@@ -72,6 +76,7 @@ const CreateDeck = () => {
             deck_link: deckLink,
             deck_results: top16,
             deck_category: category,
+            is_colourless: isColourless,
             is_white: isWhite,
             is_blue: isBlue,
             is_black: isBlack,
@@ -87,6 +92,7 @@ const CreateDeck = () => {
             deck_link: deckLink,
             deck_results: top16,
             deck_category: category,
+            is_colourless: isColourless,
             is_white: isWhite,
             is_blue: isBlue,
             is_black: isBlack,
@@ -145,6 +151,10 @@ const CreateDeck = () => {
               <input type="text" name="DeckLink" value={deckLink} onInput={e => setDeckLink(e.target.value)}/>
             </div>
           
+            <div>
+              <label htmlFor='DiscordLink'>Discord link to associated discord server: </label>
+              <input type="text" name="DiscordLink" value={discordLink} onInput={e => setDiscordLink(e.target.value)}/>
+            </div>
 
 
             <div style={{border: '2px solid red'}}>

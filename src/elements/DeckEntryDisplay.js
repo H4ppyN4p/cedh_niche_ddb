@@ -2,6 +2,7 @@ import { useState } from "react"
 
 const DeckEntryDisplay = (props) => {
 
+    const [isColourless] = useState(props.is_colourless)
     const [isWhite] = useState(props.is_white)
     const [isBlue] = useState(props.is_blue)
     const [isBlack] = useState(props.is_black)
@@ -21,6 +22,10 @@ const DeckEntryDisplay = (props) => {
                     <li> <p>Deck link: {props.deck_link} </p></li>
                     <li> <p>Deck resulsts: {props.deck_results} </p></li>
                     <div>
+                        <div>
+                            <label>Colourless</label>
+                            <input type="checkbox" id="colourless" checked={isColourless} readOnly={true}/>
+                        </div>
                         <div>
                             <label>White</label>
                             <input type="checkbox" id="white" checked={isWhite} readOnly={true}/>
@@ -54,6 +59,10 @@ const DeckEntryDisplay = (props) => {
                     <li> <p>Deck link: {props.deck_link} </p></li>
                     <li> <p>Deck resulsts: {props.deck_results} </p></li>
                     <div>
+                        <div>
+                            <label>Colourless</label>
+                            <input type="checkbox" id="colourless" checked={isColourless} readOnly={true}/>
+                        </div>
                         <div>
                             <label>White</label>
                             <input type="checkbox" id="white" checked={props.is_white} readOnly={true}/>

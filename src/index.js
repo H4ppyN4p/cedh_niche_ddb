@@ -7,6 +7,8 @@ import ReactDOM from "react-dom/client";
 import App from "./App"
 import Footer from "./elements/Footer";
 
+//Context
+import { DatabaseContextProvider } from "./contexts/DatabaseContextProvider";
 
 
 import reportWebVitals from "./reportWebVitals";
@@ -18,8 +20,11 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
-    <Footer />
+    <DatabaseContextProvider>    
+      <App />
+      <Footer />
+    </DatabaseContextProvider>
+
   </React.StrictMode>
   
 );
