@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { doc, addDoc, collection} from "firebase/firestore";
+import { addDoc, collection} from "firebase/firestore";
 import { database } from "../firebase";
 
 const CreateDeck = () => {
@@ -18,6 +18,12 @@ const CreateDeck = () => {
     const [isRed, setIsRed] = useState(false)
     const [isGreen, setIsGreen] = useState(false)
     const [top16, setTop16] = useState('None')
+    const [tagPrimary, setTagPrimary] = useState('Stax')
+    const [tag1, setTag1] = useState('')
+    const [tag2, setTag2] = useState('')
+    const [tag3, setTag3] = useState('')
+    const [tag4, setTag4] = useState('')
+
 
     const handleColourless = () => {
       setIsColourless(!isColourless);
@@ -46,20 +52,31 @@ const CreateDeck = () => {
  
   
   function clearInputs(){
-    setCategory('Fringe')
-    setDeckName('')
-    setDeckAuthor('') 
-    setCommanderOne('')
-    setCommanderTwo('')
-    setDeckDescription('')
-    setDeckLink('')
-    setIsColourless(false)
-    setIsWhite(false)
+    setCategory('Fringe');
+    setDeckName('');
+    setDeckAuthor(''); 
+    setCommanderOne('');
+    setCommanderTwo('');
+    setDeckDescription('');
+    setDeckLink('');
+    setIsColourless(false);
+    setIsWhite(false);
     setIsBlue(false);
     setIsBlack(false);
-    setIsRed(false)
-    setIsGreen(false)
-    setTop16('None')
+    setIsRed(false);
+    setIsGreen(false);
+    setTop16('None');
+    setDiscordLink('');
+    setTagPrimary('Stax');
+    setIsWhite(false);
+    setIsBlue(false);
+    setIsBlack(false);
+    setIsRed(false);
+    setIsGreen(false);
+    setTag1('');
+    setTag2('');
+    setTag3('');
+    setTag4('');
   }
 
 
@@ -74,6 +91,7 @@ const CreateDeck = () => {
             deck_commander_two: commanderTwo,
             deck_description: deckDescription,
             deck_link: deckLink,
+            discord_link: discordLink,
             deck_results: top16,
             deck_category: category,
             is_colourless: isColourless,
@@ -81,7 +99,12 @@ const CreateDeck = () => {
             is_blue: isBlue,
             is_black: isBlack,
             is_red: isRed,
-            is_green: isGreen
+            is_green: isGreen,
+            tag_primary: tagPrimary,
+            tag_one: tag1,
+            tag_two: tag2,
+            tag_three: tag3,
+            tag_four: tag4,
           }); 
         } else {
           await addDoc(collection(database, 'decklists'), {
@@ -90,6 +113,7 @@ const CreateDeck = () => {
             deck_commander_one: commanderOne,
             deck_description: deckDescription,
             deck_link: deckLink,
+            discord_link: discordLink,
             deck_results: top16,
             deck_category: category,
             is_colourless: isColourless,
@@ -97,7 +121,12 @@ const CreateDeck = () => {
             is_blue: isBlue,
             is_black: isBlack,
             is_red: isRed,
-            is_green: isGreen
+            is_green: isGreen,
+            tag_primary: tagPrimary,
+            tag_one: tag1,
+            tag_two: tag2,
+            tag_three: tag3,
+            tag_four: tag4,
           });
         }
       } catch(error) {
@@ -113,7 +142,7 @@ const CreateDeck = () => {
           <div style={FormStyle}>
             <div>
                 <label htmlFor='Category'>What category (Meta, Fringe, New Commander) does this deck belong in?</label>
-                <select name="Deck Colour" id="DeckColour" onChange={e => setCategory(e.target.value)}>
+                <select name="Deck Colour" id="DeckColour" value={category} onChange={e => setCategory(e.target.value)}>
                   <option value="Fringe">Fringe</option>
                   <option value="Meta">Meta</option>
                   <option value="New Commander">Winner</option>
@@ -192,13 +221,77 @@ const CreateDeck = () => {
 
             <div>
               <label htmlFor='Tournament Results'>Have this decklist had any 64+ entries tournament results?</label>
-              <select name="Deck Colour" id="DeckColour" onChange={e => setTop16(e.target.value)}>
-                <option value="None">No Results</option>
+              <select name="Deck Colour" id="deckColour" value={top16} onChange={e => setTop16(e.target.value)}>
+                <option value="">No Results</option>
                 <option value="Top 16">Top 16</option>
                 <option value="Top 4">Top 4</option>
                 <option value="Winner">Winner</option>
               </select>
             </div>
+
+            <div>
+              <label htmlFor='Tag-Primary'>Primary Archetype</label>
+              <select name="Tag-Primary" id="tagPrimary" value={tagPrimary} onChange={e => setTagPrimary(e.target.value)}>
+                <option value="Stax">Stax</option>
+                <option value="Midrange">Midrange</option>
+                <option value="Control">Control</option>
+                <option value="Turbo">Turbo</option>
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor='Tag-1'>Tag 1</label>
+              <select name="Tag-1" id="tagOne" value={tag1} onChange={e => setTag1(e.target.value)}>
+                <option value="">None</option>
+                <option value="AdNaus">Ad Naus</option>
+                <option value="Hatebears">Hatebears</option>
+                <option value="Reanimator">Reanimator</option>
+                <option value="Hulk">Hulk</option>
+                <option value="Polymorph">Polymorph</option>
+                <option value="Evolution">Evolution</option>
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor='Tag-2'>Tag 2</label>
+              <select name="Tag-2" id="tagTwo" value={tag2} onChange={e => setTag2(e.target.value)}>
+                <option value="">None</option>
+                <option value="AdNaus">Ad Naus</option>
+                <option value="Hatebears">Hatebears</option>
+                <option value="Reanimator">Reanimator</option>
+                <option value="Hulk">Hulk</option>
+                <option value="Polymorph">Polymorph</option>
+                <option value="Evolution">Evolution</option>
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor='Tag-3'>Tag 3</label>
+              <select name="Tag-3" id="tagThree" value={tag3} onChange={e => setTag3(e.target.value)}>
+                <option value="">None</option>
+                <option value="AdNaus">Ad Naus</option>
+                <option value="Hatebears">Hatebears</option>
+                <option value="Reanimator">Reanimator</option>
+                <option value="Hulk">Hulk</option>
+                <option value="Polymorph">Polymorph</option>
+                <option value="Evolution">Evolution</option>
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor='Tag-4'>Tag 4</label>
+              <select name="Tag-4" id="tagFour" value={tag4} onChange={e => setTag4(e.target.value)}>
+                <option value="">None</option>
+                <option value="AdNaus">Ad Naus</option>
+                <option value="Hatebears">Hatebears</option>
+                <option value="Reanimator">Reanimator</option>
+                <option value="Hulk">Hulk</option>
+                <option value="Polymorph">Polymorph</option>
+                <option value="Evolution">Evolution</option>
+              </select>
+            </div>
+
+            
 
             <button onClick={addNewDocToDB}>Button to send text</button>
           </div>
