@@ -21,7 +21,8 @@ const DeckEntryDisplay = (props) => {
                     <li> <p>Deck description: {props.deck_description} </p></li>
                     <li> <p>Deck link: {props.deck_link} </p></li>
                     <li> <p>Deck resulsts: {props.deck_results} </p></li>
-                    <div>
+                    <li> <p>Archetype: {props.tag_primary}</p></li>
+                    <li>
                         <div>
                             <label>Colourless</label>
                             <input type="checkbox" id="colourless" checked={isColourless} readOnly={true}/>
@@ -46,10 +47,18 @@ const DeckEntryDisplay = (props) => {
                             <label>Green</label>
                             <input type="checkbox" id="green" checked={isGreen} readOnly={true}/>
                         </div>
-                    </div>
+                    </li>
+                    <li style={{border: "2px solid green"}}>
+                        <div>
+                            <p>{props.tag_one}</p>
+                            <p>{props.tag_two}</p>
+                            <p>{props.tag_three}</p>
+                            <p>{props.tag_four}</p>
+                        </div>
+                    </li>
                 </ul>
             </>
-        ) : (
+        ) : 
             <> 
                   <ul style={DeckEntryStyle}>
                     <li><p>Deck name: {props.deck_name}</p></li>
@@ -58,7 +67,8 @@ const DeckEntryDisplay = (props) => {
                     <li> <p>Deck description: {props.deck_description} </p></li>
                     <li> <p>Deck link: {props.deck_link} </p></li>
                     <li> <p>Deck resulsts: {props.deck_results} </p></li>
-                    <div>
+                    <li> <p>Archetype: {props.tag_primary}</p></li>
+                    <li>
                         <div>
                             <label>Colourless</label>
                             <input type="checkbox" id="colourless" checked={isColourless} readOnly={true}/>
@@ -83,10 +93,19 @@ const DeckEntryDisplay = (props) => {
                             <label>Green</label>
                             <input type="checkbox" id="green" checked={props.is_green} readOnly={true}/>
                         </div>
-                    </div>
+                    </li>
+                    <li>
+                        <div>
+                            <p> Tag one: {props.tag_one}</p>
+                            <p>{props.tag_two}</p>
+                            <p>{props.tag_three}</p>
+                            <p>{props.tag_four}</p>
+                        </div>
+                    </li>
+                    <li><p>Discord link: {props.discord_link}</p></li>
                 </ul>
             </>
-        )
+        
 
         }
      

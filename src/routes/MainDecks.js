@@ -1,6 +1,3 @@
-import { collection } from 'firebase/firestore'
-import { useCollection } from 'react-firebase-hooks/firestore'
-import { database } from '../firebase'
 
 //Contexts
 import { useDatabaseContext } from '../contexts/DatabaseContextProvider'
@@ -34,6 +31,12 @@ const MainDecks = () => {
                         is_black={e.is_black}
                         is_red={e.is_red}
                         is_green={e.is_green}
+                        tag_primary={e.tag_primary}
+                        tag_one={e.tag_one}
+                        tag_two={e.tag_two}
+                        tag_three={e.tag_three}
+                        tag_four={e.tag_four}
+                        discord_link={e.discord_link}
                     />
                 )
             })}
