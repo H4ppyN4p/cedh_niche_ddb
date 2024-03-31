@@ -20,6 +20,7 @@ const DeckEntryDisplay = (props) => {
                     <li> <p>Commander two:  {props.deck_commander_two} </p></li>
                     <li> <p>Deck description: {props.deck_description} </p></li>
                     <li> <p>Deck link: {props.deck_link} </p></li>
+                    <li> <p>Discord link: {props.discord_link}</p> </li>
                     <li> <p>Deck resulsts: {props.deck_results} </p></li>
                     <li> <p>Archetype: {props.tag_primary}</p></li>
                     <li>
@@ -66,6 +67,7 @@ const DeckEntryDisplay = (props) => {
                     <li> <p>Commander one:  {props.deck_commander_one} </p></li>
                     <li> <p>Deck description: {props.deck_description} </p></li>
                     <li> <p>Deck link: {props.deck_link} </p></li>
+                    <li> <p>Discord link: {props.discord_link}</p> </li>
                     <li> <p>Deck resulsts: {props.deck_results} </p></li>
                     <li> <p>Archetype: {props.tag_primary}</p></li>
                     <li>
