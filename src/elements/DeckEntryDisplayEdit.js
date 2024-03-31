@@ -92,6 +92,7 @@ const DeckEntryDisplayEdit = (props) => {
         if (window.confirm('Are you sure you want to delete this deck?')) {
             try {
               await deleteDoc(doc(database, 'decklists', props.deck_id))
+              updateContext(true)
             } catch(error) {
                 console.log(error)
             }
@@ -342,6 +343,7 @@ const DeckEntryDisplayEdit = (props) => {
                 props.deck_commander_two ? (
                     <> 
                         <ul style={DeckEntryStyle}>
+                            <li> <p>Deck Category: {props.deck_category}</p></li>
                             <li> <p>Deck name: {props.deck_name}</p></li>
                             <li> <p>Deck author: {props.deck_author} </p></li>
                             <li> <p>Commander one:  {props.deck_commander_one} </p></li>
@@ -392,7 +394,8 @@ const DeckEntryDisplayEdit = (props) => {
                 ) : (
                     <> 
                         <ul style={DeckEntryStyle}>
-                        <li> <p>Deck name: {props.deck_name}</p></li>
+                            <li> <p>Deck Category: {props.deck_category}</p></li>
+                            <li> <p>Deck name: {props.deck_name}</p></li>
                             <li> <p>Deck author: {props.deck_author} </p></li>
                             <li> <p>Commander one:  {props.deck_commander_one} </p></li>
                             <li> <p>Deck description: {props.deck_description} </p></li>
