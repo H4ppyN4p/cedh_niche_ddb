@@ -259,6 +259,9 @@ const CreateDeck = () => {
                 <option value="Polymorph">Polymorph</option>
                 <option value="Evolution">Evolution</option>
                 <option value="Breach">Breach</option>
+                <option value="Food Chain">Food Chain</option>
+                <option value="Storm - deterministic">Deterministic Storm</option>
+                <option value="Storm - non deterministic">Non Deterministic Storm</option>
               </select>
             </div>
 
@@ -273,6 +276,9 @@ const CreateDeck = () => {
                 <option value="Polymorph">Polymorph</option>
                 <option value="Evolution">Evolution</option>
                 <option value="Breach">Breach</option>
+                <option value="Food Chain">Food Chain</option>
+                <option value="Storm - deterministic">Deterministic Storm</option>
+                <option value="Storm - non deterministic">Non Deterministic Storm</option>
               </select>
             </div>
 
@@ -287,6 +293,9 @@ const CreateDeck = () => {
                 <option value="Polymorph">Polymorph</option>
                 <option value="Evolution">Evolution</option>
                 <option value="Breach">Breach</option>
+                <option value="Food Chain">Food Chain</option>
+                <option value="Storm - deterministic">Deterministic Storm</option>
+                <option value="Storm - non deterministic">Non Deterministic Storm</option>
               </select>
             </div>
 
@@ -301,6 +310,9 @@ const CreateDeck = () => {
                 <option value="Polymorph">Polymorph</option>
                 <option value="Evolution">Evolution</option>
                 <option value="Breach">Breach</option>
+                <option value="Food Chain">Food Chain</option>
+                <option value="Storm - deterministic">Deterministic Storm</option>
+                <option value="Storm - non deterministic">Non Deterministic Storm</option>
               </select>
             </div>
 
