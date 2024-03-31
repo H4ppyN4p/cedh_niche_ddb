@@ -1,14 +1,21 @@
 import { deleteDoc, updateDoc, doc } from 'firebase/firestore';
 import { database } from '../firebase';
-import { useState } from 'react';
+import { useState} from 'react';
+
+//context
+import { useUpdateContext } from '../contexts/DatabaseContextProvider';
 
 const DeckEntryDisplayEdit = (props) => {
 
+    //use the context(s)
+    const updateContext = useUpdateContext()
+
+    //state for handling whether editing is going on or not
     const [isEditing, setIsEditing] = useState(false)
 
+    //states to hold and manage values
     const [deckName, setDeckName] = useState(props.deck_name)
     const [deckAuthor, setDeckAuthor] = useState(props.deck_author)
-    const [deckColour, setDeckColour] = useState(props.deck_colour)
     const [commanderOne, setCommanderOne] = useState(props.deck_commander_one)
     const [commanderTwo, setCommanderTwo] = useState(props.deck_commander_two)
     const [deckDescription, setDeckDescription] = useState(props.deck_description)
@@ -16,7 +23,7 @@ const DeckEntryDisplayEdit = (props) => {
     const [category, setCategory] = useState(props.deck_category)
     const [discordLink, setDiscordLink] = useState(props.discord_link)
     const [isColourless, setIsColourless] = useState(props.is_colourless)
-    const [isWhite, setIsWhite] = useState(props.is_colour)
+    const [isWhite, setIsWhite] = useState(props.is_white)
     const [isBlue, setIsBlue] = useState(props.is_blue)
     const [isBlack, setIsBlack] = useState(props.is_black)
     const [isRed, setIsRed] = useState(props.is_red)
@@ -28,6 +35,7 @@ const DeckEntryDisplayEdit = (props) => {
     const [tag3, setTag3] = useState(props.tag_three)
     const [tag4, setTag4] = useState(props.tag_four)
 
+    
 
     const handleColourless = () => {
         setIsColourless(!isColourless);
@@ -53,20 +61,37 @@ const DeckEntryDisplayEdit = (props) => {
         setIsGreen(!isGreen);
       }
 
+      /*
+       'deck name: ' +  deckName,
+           '   deck author: ' + deckAuthor,
+           '   commander one: ' + commanderOne,
+           '    commander two: ' + commanderTwo,
+           '    deck description; ' + deckDescription,
+            '   deck link: ' + deckLink,
+            '    discord link: ' + discordLink,
+             '    top: ' + top16,
+           '    category: ' +  category,
+            '   colourless ' + isColourless,
+            '   white ' +isWhite,
+            '   blue '+isBlue,
+            '   black '+isBlack,
+           '   red '+isRed,
+           '   green '+ isGreen,
+            '   primary '+ tagPrimary,
+            '   1 '+ tag1,
+            '   2 ' +tag2,
+            '   3 '+ tag3,
+            '   4 '+ tag4, 
+      */
 
     function setToEditMode(){
         setIsEditing(!isEditing)
-        console.log('black: ' + isBlack)
-        console.log('blue: ' + isBlue)
-        console.log('white: ' + isWhite)
-        console.log('Green: ' + isGreen)
-        console.log('Red: ' + isRed)
     }
 
     async function deleteDeck(){
         if (window.confirm('Are you sure you want to delete this deck?')) {
             try {
-              await deleteDoc(doc(database, 'decks_mainlist', props.deck_id))
+              await deleteDoc(doc(database, 'decklists', props.deck_id))
             } catch(error) {
                 console.log(error)
             }
@@ -78,7 +103,7 @@ const DeckEntryDisplayEdit = (props) => {
 
             try {
                 if (commanderTwo !== undefined) {
-                    await updateDoc(doc(database, 'decks_mainlist', props.deck_id), {
+                    await updateDoc(doc(database, 'decklists', props.deck_id), {
                         deck_name: deckName,
                         deck_author: deckAuthor,
                         deck_commander_one: commanderOne,
@@ -98,11 +123,11 @@ const DeckEntryDisplayEdit = (props) => {
                         tag_one: tag1,
                         tag_two: tag2,
                         tag_three: tag3,
-                        tag_four: tag4,
+                        tag_four: tag4, 
                     })
     
                 } else {
-                    await updateDoc(doc(database, 'decks_mainlist', props.deck_id), {
+                    await updateDoc(doc(database, 'decklists', props.deck_id), {
                         deck_name: deckName,
                         deck_author: deckAuthor,
                         deck_commander_one: commanderOne,
@@ -124,7 +149,8 @@ const DeckEntryDisplayEdit = (props) => {
                         tag_four: tag4,
                     })
                 }    
-    
+                setToEditMode()
+                updateContext(true)
             } catch(error) {
                 console.log(error)
             }
@@ -136,7 +162,7 @@ const DeckEntryDisplayEdit = (props) => {
         <>
         { isEditing ? (
 
-                <div style={EditEntryStyle}>
+                <div  style={EditEntryStyle}>
 
                     <div>
                         <label htmlFor='Category'>What category (Meta, Fringe, New Commander) does this deck belong in?</label>
@@ -186,32 +212,32 @@ const DeckEntryDisplayEdit = (props) => {
                         <p>Choose colours for the deck:</p>
                         <div>
                             <label>Colourless</label>
-                            <input type="checkbox" id="colourless" name="colourless" checked={isColourless} onChange={handleColourless}/>
+                            <input type="checkbox" id="colourless" defaultChecked={isColourless} name="colourless" value={isColourless} onChange={handleColourless}/>
                         </div>
 
                         <div>
                             <label>White</label>
-                            <input type="checkbox" id="white" name="white" value={isWhite}onChange={handleWhite}/>
+                            <input type="checkbox" id="white" defaultChecked={isWhite} name="white" value={isWhite} onChange={handleWhite}/>
                         </div>
 
                         <div>
                             <label>Blue</label>
-                            <input type="checkbox" id="blue" name="blue" value={isBlue}  onChange={handleBlue}/>
+                            <input type="checkbox" id="blue" defaultChecked={isBlue} name="blue" value={isBlue}  onChange={handleBlue}/>
                         </div>
 
                         <div>
                             <label>Black</label>
-                            <input type="checkbox" id="black" name="black" value={isBlack}  onChange={handleBlack}/>
+                            <input type="checkbox" id="black" defaultChecked={isBlack} name="black" value={isBlack}  onChange={handleBlack}/>
                         </div>
 
                         <div>
                             <label>Red</label>
-                            <input type="checkbox" id="red" name="red" value={isRed} onChange={handleRed}/>
+                            <input type="checkbox" id="red" defaultChecked={isRed} name="red" value={isRed} onChange={handleRed}/>
                         </div>
 
                         <div>
                             <label>Green</label>
-                            <input type="checkbox" id="green" name="green" value={isGreen} onChange={handleGreen}/>
+                            <input type="checkbox" id="green" defaultChecked={isGreen} name="green" value={isGreen} onChange={handleGreen}/>
                         </div>
                     </div>
 
@@ -246,6 +272,9 @@ const DeckEntryDisplayEdit = (props) => {
                             <option value="Polymorph">Polymorph</option>
                             <option value="Evolution">Evolution</option>
                             <option value="Breach">Breach</option>
+                            <option value="Food Chain">Food Chain</option>
+                            <option value="Storm - deterministic">Deterministic Storm</option>
+                            <option value="Storm - non deterministic">Non Deterministic Storm</option>
                         </select>
                     </div>
 
@@ -260,6 +289,9 @@ const DeckEntryDisplayEdit = (props) => {
                             <option value="Polymorph">Polymorph</option>
                             <option value="Evolution">Evolution</option>
                             <option value="Breach">Breach</option>
+                            <option value="Food Chain">Food Chain</option>
+                            <option value="Storm - deterministic">Deterministic Storm</option>
+                            <option value="Storm - non deterministic">Non Deterministic Storm</option>
                         </select>
                     </div>
 
@@ -274,6 +306,9 @@ const DeckEntryDisplayEdit = (props) => {
                             <option value="Polymorph">Polymorph</option>
                             <option value="Evolution">Evolution</option>
                             <option value="Breach">Breach</option>
+                            <option value="Food Chain">Food Chain</option>
+                            <option value="Storm - deterministic">Deterministic Storm</option>
+                            <option value="Storm - non deterministic">Non Deterministic Storm</option>
                         </select>
                     </div>
 
@@ -288,13 +323,16 @@ const DeckEntryDisplayEdit = (props) => {
                             <option value="Polymorph">Polymorph</option>
                             <option value="Evolution">Evolution</option>
                             <option value="Breach">Breach</option>
+                            <option value="Food Chain">Food Chain</option>
+                            <option value="Storm - deterministic">Deterministic Storm</option>
+                            <option value="Storm - non deterministic">Non Deterministic Storm</option>
                         </select>
                     </div>
                         
 
                     Edit mode
                     <button onClick={updateDeck}>Save edit</button>
-                    <button onClick={setToEditMode}>Edit</button>
+                    <button onClick={setToEditMode}>Cancel edit</button>
 
                 </div>
         
@@ -310,6 +348,7 @@ const DeckEntryDisplayEdit = (props) => {
                             <li> <p>Commander two:  {props.deck_commander_two} </p></li>
                             <li> <p>Deck description: {props.deck_description} </p></li>
                             <li> <p>Deck link: {props.deck_link} </p></li>
+                            <li> <p>Discord link: {props.discord_link}</p> </li>
                             <li> <p>Deck resulsts: {props.deck_results} </p></li>
                             <li> <p>Archetype: {props.tag_primary}</p></li>
                             <li>
@@ -358,6 +397,7 @@ const DeckEntryDisplayEdit = (props) => {
                             <li> <p>Commander one:  {props.deck_commander_one} </p></li>
                             <li> <p>Deck description: {props.deck_description} </p></li>
                             <li> <p>Deck link: {props.deck_link} </p></li>
+                            <li> <p>Discord link: {props.discord_link}</p> </li>
                             <li> <p>Deck resulsts: {props.deck_results} </p></li>
                             <li> <p>Archetype: {props.tag_primary}</p></li>
                             <li>

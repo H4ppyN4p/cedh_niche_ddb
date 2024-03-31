@@ -2,7 +2,15 @@ import { useState } from "react";
 import { addDoc, collection} from "firebase/firestore";
 import { database } from "../firebase";
 
+//Context
+import { useUpdateContext } from "../contexts/DatabaseContextProvider";
+
 const CreateDeck = () => {
+
+    //use the context(s)
+    const updateContext = useUpdateContext()
+
+    //states to hold and manage values
     const [category, setCategory] = useState('Fringe')
     const [deckName, setDeckName] = useState('')
     const [deckAuthor, setDeckAuthor] = useState('')
@@ -129,6 +137,7 @@ const CreateDeck = () => {
             tag_four: tag4,
           });
         }
+        updateContext(true)
       } catch(error) {
         console.log(error)
       }

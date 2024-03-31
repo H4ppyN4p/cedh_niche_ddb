@@ -18,6 +18,7 @@ const EditDecks = () => {
                 return (
                     <DeckEntry 
                         key={e.id}
+                        deck_id={e.id}
                         deck_author={e.deck_author} 
                         deck_category={e.deck_category}
                         deck_commander_one={e.deck_commander_one}
