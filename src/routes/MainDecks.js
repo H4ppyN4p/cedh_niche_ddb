@@ -1,5 +1,6 @@
 
 //Contexts
+import { useEffect, useState } from 'react'
 import { useDatabaseContext } from '../contexts/DatabaseContextProvider'
 
 //Elements
@@ -9,11 +10,31 @@ const MainDecks = () => {
 
     const data = useDatabaseContext()
 
+    const [decksToShow, setDeckToShow] = useState()
+
+    useEffect(() => {
+        const newObjects = []
+
+        if (data !== undefined){
+            data.forEach(element => {
+                if (element.deck_category == 'Fringe'){
+                    newObjects.push(element)
+                }
+            });
+        }
+        setDeckToShow(newObjects)
+    }, [data])
+
+    
+
+
+
+
     return(
         <>
         <div>Main list of decks niche decks</div>
 
-            {data && data.map((e) => {
+            {decksToShow && decksToShow.map((e) => {
                 return (
                     <DeckEntry 
                         key={e.id}
