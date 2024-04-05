@@ -1,11 +1,37 @@
 import { useState } from "react";
 import { addDoc, collection} from "firebase/firestore";
-import { database } from "../firebase";
+import { database, image } from "../firebase";
+import { ref, uploadBytes } from "firebase/storage"
 
 //Context
 import { useUpdateContext } from "../contexts/DatabaseContextProvider";
 
 const CreateDeck = () => {
+
+    //handle images for firebase
+    const [img, setImg] = useState('') 
+    const [imgTwo, setImgTwo] = useState('') 
+
+    function logTheImage(){
+      console.log(img)
+    }
+
+    const uploadImage = () => {
+      if (commanderTwo != '') {
+
+        const imgRef = ref(image, `commanders/${commanderOne}`)
+        uploadBytes(imgRef, img)
+
+        const imgRefTwo = ref(image, `commanders/${commanderTwo}`)
+        uploadBytes(imgRefTwo, imgTwo)
+
+      } else {
+        const imgRef = ref(image, `commanders/${commanderOne}`)
+        uploadBytes(imgRef, img)
+      }
+
+ 
+    }
 
     //use the context(s)
     const updateContext = useUpdateContext()
@@ -316,8 +342,15 @@ const CreateDeck = () => {
               </select>
             </div>
 
-            
+            <div>
+              <label>Image one</label>
+              <input type="file" onChange={(e) => setImg(e.target.files[0])} />
 
+              <label>Image Two</label>
+              <input type="file" onChange={(e) => setImgTwo(e.target.files[0])} />
+            </div>
+
+            <button onClick={uploadImage}>Add Image </button>
             <button onClick={addNewDocToDB}>Button to send text</button>
           </div>
         </div>
