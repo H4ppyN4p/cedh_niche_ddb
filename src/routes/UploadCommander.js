@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
-import { database, image } from "../firebase";
-import { ref, uploadBytes, listAll, list } from "firebase/storage"
+import { useState} from "react";
+import { image } from "../firebase";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage"
+import { v4 } from "uuid";
 
 const UploadCommander = () => {
 
@@ -8,30 +9,22 @@ const UploadCommander = () => {
 
     //handle images for firebase
     const [img, setImg] = useState('') 
-    const [allImgs, setAllImgs] = useState()
 
-    const listOfImgs = new Promise(function(myResolve, myReject) {
-        listAll(ref(image, 'commanders'))
+    function checkUUID(){
+        console.log(v4())
+    }
 
-        myResolve();
-        myReject();
-    })
-    
+    const metadata = {
+        name: commanderOne
+    }
 
-    
-    
-    useEffect(() => {
-        setAllImgs(listOfImgs)
-        console.log(allImgs)
-    }, [listOfImgs !== undefined])
-    
- 
-    const uploadImage = () => {
-    
-        const imgRef = ref(image, `commanders/${commanderOne}`)
-        uploadBytes(imgRef, img)
- 
-
+    function uploadImage(){
+        const imgRef = ref(image, `commanders/${v4()}`)
+        uploadBytes(imgRef, img, metadata).then((snapshot) => {
+            getDownloadURL( snapshot.ref).then(url => {
+                console.log(url)
+            })
+        })
     }
 
     return(
@@ -47,6 +40,7 @@ const UploadCommander = () => {
             </div>
 
             <button onClick={uploadImage}>Add Image </button>
+            <button onClick={checkUUID}>Check random ID </button>
         </>
     )
 }
