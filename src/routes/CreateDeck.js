@@ -12,9 +12,7 @@ const CreateDeck = () => {
     const [img, setImg] = useState('') 
     const [imgTwo, setImgTwo] = useState('') 
 
-    function logTheImage(){
-      console.log(img)
-    }
+    
 
     const uploadImage = () => {
       if (commanderTwo != '') {

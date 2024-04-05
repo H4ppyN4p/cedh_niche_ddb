@@ -45,6 +45,8 @@ const Root = () => {
                         <li style={ListElement}>
                             <Link style={LoggedInStyle} to={'/createdecks'}>Create decks</Link>
                             <Link style={LoggedInStyle} to={'/editdecks'}>Edit decks</Link>
+                            <Link style={LoggedInStyle} to={'/uploadcommander'}>Upload Commander images</Link>
+
                             <button onClick={signOutFromFirebase}>Logout</button>
                         </li>
                       

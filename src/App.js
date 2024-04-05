@@ -12,6 +12,8 @@ import OutdatedDecks from "./routes/OutdatedDecks";
 import SignIn from "./routes/SignIn";
 import CreateDeck from "./routes/CreateDeck";
 import EditDecks from "./routes/EditDecks";
+import UploadCommander from "./routes/UploadCommander";
+
 
 //firebase auth
 
@@ -54,6 +56,11 @@ const r_router = createBrowserRouter([
           path: "editdecks",
           element: <EditDecks />
         },
+        {
+          path: "uploadcommander",
+          element: <UploadCommander />
+        },
+        
       ]
     }
   ]);

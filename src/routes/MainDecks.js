@@ -17,7 +17,7 @@ const MainDecks = () => {
 
         if (data !== undefined){
             data.forEach(element => {
-                if (element.deck_category == 'Fringe'){
+                if (element.deck_category === 'Fringe'){
                     newObjects.push(element)
                 }
             });
