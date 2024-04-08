@@ -8,9 +8,7 @@ import { useUpdateContext } from "../contexts/DatabaseContextProvider";
 
 const CreateDeck = () => {
 
-    //handle images for firebase
-    const [img, setImg] = useState('') 
-    const [imgTwo, setImgTwo] = useState('') 
+ 
 
     
 
@@ -33,6 +31,10 @@ const CreateDeck = () => {
 
     //use the context(s)
     const updateContext = useUpdateContext()
+
+    //handle images for firebase
+    const [img, setImg] = useState('') 
+    const [imgTwo, setImgTwo] = useState('') 
 
     //states to hold and manage values
     const [category, setCategory] = useState('Fringe')

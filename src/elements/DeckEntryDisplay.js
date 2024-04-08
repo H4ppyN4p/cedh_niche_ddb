@@ -2,6 +2,35 @@ import { useState } from "react"
 
 const DeckEntryDisplay = (props) => {
 
+    /*
+    //handle images for firebase
+    const [img, setImg] = useState('') 
+    const [imgTwo, setImgTwo] = useState('') 
+
+    //states to hold and manage values
+    const [category, setCategory] = useState('Fringe')
+    const [deckName, setDeckName] = useState('')
+    const [deckAuthor, setDeckAuthor] = useState('')
+    const [commanderOne, setCommanderOne] = useState('')
+    const [commanderTwo, setCommanderTwo] = useState('')
+    const [deckDescription, setDeckDescription] = useState('')
+    const [deckLink, setDeckLink] = useState('')
+    const [discordLink, setDiscordLink] = useState('')
+    const [isColourless, setIsColourless] = useState(false)
+    const [isWhite, setIsWhite] = useState(false)
+    const [isBlue, setIsBlue] = useState(false)
+    const [isBlack, setIsBlack] = useState(false)
+    const [isRed, setIsRed] = useState(false)
+    const [isGreen, setIsGreen] = useState(false)
+    const [top16, setTop16] = useState('None')
+    const [tagPrimary, setTagPrimary] = useState('Stax')
+    const [tag1, setTag1] = useState('')
+    const [tag2, setTag2] = useState('')
+    const [tag3, setTag3] = useState('')
+    const [tag4, setTag4] = useState('')
+    */
+
+
     const [isColourless] = useState(props.is_colourless)
     const [isWhite] = useState(props.is_white)
     const [isBlue] = useState(props.is_blue)
@@ -12,7 +41,8 @@ const DeckEntryDisplay = (props) => {
     return(
         <>
         { props.deck_commander_two ? (
-            <> 
+            <div> 
+                <div style={DeckEntry}></div>
                <ul style={DeckEntryStyle}>
                     <li><p>Deck name: {props.deck_name}</p></li>
                     <li> <p>Deck author: {props.deck_author} </p></li>
@@ -58,7 +88,7 @@ const DeckEntryDisplay = (props) => {
                         </div>
                     </li>
                 </ul>
-            </>
+            </div>
         ) : 
             <> 
                   <ul style={DeckEntryStyle}>
@@ -120,4 +150,10 @@ export default DeckEntryDisplay
 
 const DeckEntryStyle = {
     border: '2px solid red'
+}
+
+const DeckEntry = {
+    border: '2px solid green',
+    minHeight: '200px',
+    width: '300px'
 }

@@ -1,0 +1,4 @@
+Todo next:
+
+Properly defined flexbox on MainDecks.js
+Create a proper DeckEntry page in DeckEntryDisplay.js
