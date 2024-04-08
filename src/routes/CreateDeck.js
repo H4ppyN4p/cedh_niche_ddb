@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { addDoc, collection} from "firebase/firestore";
 import { database, image } from "../firebase";
-import { ref, uploadBytes } from "firebase/storage"
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage"
+import { v4 } from "uuid";
+
 
 //Context
 import { useUpdateContext } from "../contexts/DatabaseContextProvider";
@@ -12,18 +14,36 @@ const CreateDeck = () => {
 
     
 
-    const uploadImage = () => {
+    function uploadImage (){
       if (commanderTwo != '') {
 
-        const imgRef = ref(image, `commanders/${commanderOne}`)
-        uploadBytes(imgRef, img)
+        const imgRef = ref(image, `commanders/${v4()}`)
+        uploadBytes(imgRef, img).then((snapshot => {
+          getDownloadURL(snapshot.ref).then(url => {
+            console.log(url)
+            setCommanderOneRef(url)
+            alert('you can now submit the deck')
+          })
+        }))
 
-        const imgRefTwo = ref(image, `commanders/${commanderTwo}`)
-        uploadBytes(imgRefTwo, imgTwo)
-
+        const imgRefTwo = ref(image, `commanders/${v4()}`)
+        uploadBytes(imgRefTwo, imgTwo).then((snapshot => {
+          getDownloadURL(snapshot.ref).then(url => {
+            console.log(url)
+            setCommanderTwoRef(url)
+          })
+        }))
+        console.log('uploaded two images')
       } else {
-        const imgRef = ref(image, `commanders/${commanderOne}`)
-        uploadBytes(imgRef, img)
+        const imgRef = ref(image, `commanders/${v4()}`)
+        uploadBytes(imgRef, img).then((snapshot => {
+          getDownloadURL(snapshot.ref).then(url => {
+            console.log(url)
+            setCommanderOneRef(url)
+            alert('you can now submit the deck')
+          })
+        }))
+        console.log('uploaded one image')
       }
 
  
@@ -42,6 +62,8 @@ const CreateDeck = () => {
     const [deckAuthor, setDeckAuthor] = useState('')
     const [commanderOne, setCommanderOne] = useState('')
     const [commanderTwo, setCommanderTwo] = useState('')
+    const [commanderOneRef, setCommanderOneRef] = useState('')
+    const [commanderTwoRef, setCommanderTwoRef] = useState('')
     const [deckDescription, setDeckDescription] = useState('')
     const [deckLink, setDeckLink] = useState('')
     const [discordLink, setDiscordLink] = useState('')
@@ -115,6 +137,7 @@ const CreateDeck = () => {
 
 
   async function addNewDocToDB(){
+
       try{
         if (commanderTwo !== '') {
         
@@ -123,6 +146,8 @@ const CreateDeck = () => {
             deck_author: deckAuthor,
             deck_commander_one: commanderOne,
             deck_commander_two: commanderTwo,
+            deck_commander_one_ref: commanderOneRef,
+            deck_commander_two_ref: commanderTwoRef,
             deck_description: deckDescription,
             deck_link: deckLink,
             discord_link: discordLink,
@@ -145,6 +170,7 @@ const CreateDeck = () => {
             deck_name: deckName,
             deck_author: deckAuthor,
             deck_commander_one: commanderOne,
+            deck_commander_one_ref: commanderOneRef,
             deck_description: deckDescription,
             deck_link: deckLink,
             discord_link: discordLink,
