@@ -22,6 +22,7 @@ import UploadCommander from "./routes/UploadCommander";
 //loader functions
 import {checkAuthCredent} from "./LoaderFunctions"
 import MetaDecks from "./routes/MetaDecks";
+import ColourCheck from "./routes/ColourCheck";
 
 
 
@@ -62,6 +63,10 @@ const r_router = createBrowserRouter([
           element: <EditDecks />,
           loader: checkAuthCredent
         },
+        {
+          path: 'colourcheck',
+          element: <ColourCheck />
+        }
         
       
       ]

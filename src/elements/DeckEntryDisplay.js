@@ -130,15 +130,16 @@ export default DeckEntryDisplay
 
 
 const DeckEntry = {
-    border: '2px solid green',
-    minHeight: '200px',
-    width: '330px',
+    minHeight: '390px',
+    width: '320px',
+    margin: '10px 40px',
 }
 
 const DeckEntryContainer = {
     width: '80%',
     margin: 'auto',
-    backgroundColor: 'lightgrey'
+    backgroundColor: 'lightgrey',
+    height: '100%'
 }
 
 const IsColoursContainer = {
@@ -184,11 +185,13 @@ const TagContainer = {
     display: 'flex',
     flexDirection: 'col',
     flexWrap: 'wrap',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    minHeight: '45px'
 }
 
 const TagHolder = {
     width: '40%',
     margin: '2px',
-    backgroundColor: 'lightblue'
+    backgroundColor: 'lightblue',
+    height: '20px'
 }

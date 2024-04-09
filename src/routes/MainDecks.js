@@ -61,7 +61,8 @@ const MainDecks = () => {
             <div style={EntryContainer}>
                 {decksToShow && decksToShow.map((e) => {
                     return (
-                        <DeckEntry 
+                        <DeckEntry
+                        key={e.id}
                         id={e.id}
                         deck_author={e.deck_author}
                         deck_category={e.deck_category}
@@ -100,6 +101,6 @@ const EntryContainer = {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-around',
+    justifyContent: 'flex-start',
     alignContent: 'space-between'
 }

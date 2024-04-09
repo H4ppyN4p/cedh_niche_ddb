@@ -27,41 +27,34 @@ const Root = () => {
 
     return(
         <>
-        <div></div>
-        <div style={Container}>
-            <ul>
-                <li style={ListElement}>
-                    <Link to={'/'}>Fringe Decks</Link>
-                </li>
-                <li style={ListElement}>
-                    <Link to={'/outdateddecks'}>Outdated Decks</Link>
-                </li>
-                <li style={ListElement}>
-                    <Link to={'/newdecks'}>New Decks</Link>
-                </li>
-                <li style={ListElement}>
-                    <Link to={'/metadecks'}>Meta Decks</Link>
-                </li>
+        <nav style={Container}>
+            <h2 style={NavElement}>Logo</h2> 
+            <Link style={NavElement} to={'/'}>Fringe Decks</Link>
+            <Link style={NavElement} to={'/outdateddecks'}>Outdated Decks</Link>
+            <Link style={NavElement} to={'/newdecks'}>New Decks</Link>
+            <Link style={NavElement} to={'/metadecks'}>Meta Decks</Link>
 
               
-                { user ? (
-                        <li style={ListElement}>
-                            <Link style={LoggedInStyle} to={'/createdecks'}>Create decks</Link>
-                            <Link style={LoggedInStyle} to={'/editdecks'}>Edit decks</Link>
-                            <button onClick={signOutFromFirebase}>Logout</button>
-                        </li>
-                      
-                    ) : (
-                        <>
-                      
-                        </>
-                    )
-                }
-               
-                 
-            </ul>
-        </div>
+            { user ? (
+                    <div style={LoggedInElements}>
+                        <div>///</div>
+                        <Link style={NavElement} to={'/createdecks'}>Create decks</Link>
+                        <Link style={NavElement} to={'/editdecks'}>Edit decks</Link>
+                        <button style={NavElement} onClick={signOutFromFirebase}>Logout</button>
+                    </div>
+                    
+                ) : (
+                    <>
+                    
+                    </>
+                )
+            }          
+        </nav>
 
+        <div style={{padding: '20px', 
+        backgroundColor: '#72BFD7',
+
+        }}></div>
         <div style={Content}>
             <Outlet />
         </div>
@@ -75,13 +68,22 @@ export default Root;
 const Container = {
     display: 'flex',
     margin: 0,
-    backgroundColor: '#D77272'
+    flexDirection: 'row',
+    backgroundColor: '#D77272',
+    position: 'fixed',
+    width: '100%',
+    alignItems: 'flex-end'
 
 }
 
-const ListElement = {
-    display: 'inline',
-    paddingRight: '20px'
+const NavElement = {
+    margin: '0 10px'
+}
+
+const LoggedInElements = {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'flex-end'
 }
 
 const Content = {
@@ -89,6 +91,3 @@ const Content = {
     backgroundColor: '#72BFD7'
 }
 
-const LoggedInStyle = {
-    paddingRight: '20px'
-}
