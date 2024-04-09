@@ -21,6 +21,7 @@ import UploadCommander from "./routes/UploadCommander";
 
 //loader functions
 import {checkAuthCredent} from "./LoaderFunctions"
+import MetaDecks from "./routes/MetaDecks";
 
 
 
@@ -32,8 +33,8 @@ const r_router = createBrowserRouter([
       errorElement: <ErrorPage />,
       children: [
         {
-          path: "maindecks",
-          element: <MainDecks />,
+          path: "/",
+          element: <MainDecks />
         },
         {
           path: "outdateddecks",
@@ -42,6 +43,10 @@ const r_router = createBrowserRouter([
         {
           path: "newdecks",
           element: <NewDecks />
+        },
+        {
+          path: 'metadecks',
+          element: <MetaDecks />
         },
         {
           path: "signin",
@@ -54,13 +59,11 @@ const r_router = createBrowserRouter([
         },
         {
           path: "editdecks",
-          element: <EditDecks />
-        },
-        {
-          path: "uploadcommander",
-          element: <UploadCommander />
+          element: <EditDecks />,
+          loader: checkAuthCredent
         },
         
+      
       ]
     }
   ]);

@@ -4,27 +4,9 @@ const DeckEntryDisplay = (props) => {
 
     /*
     id={e.id}
-    deck_author={e.deck_author}
-    deck_category={e.deck_category}
     deck_commander_one={e.deck_commander_one}
-    deck_commander_one_ref={e.deck_commander_one_ref}
     deck_commander_two={e.deck_commander_two}
-    deck_commander_two_ref={e.deck_commander_two_ref}
     deck_description={e.deck_description}
-    deck_link={e.deck_link}
-    deck_name={e.deck_name}
-    deck_results={e.deck_results}
-    is_black={e.is_black}
-    is_blue={e.is_blue}
-    is_colourless={e.is_colourless}
-    is_green={e.is_green}
-    is_red={e.is_red}
-    is_white={e.is_white}
-    tag_primary={e.tag_primary}
-    tag_one={e.tag_one}
-    tag_two={e.tag_two}
-    tag_three={e.tag_three}
-    tag_four={e.tag_four}
     */
 
 
@@ -41,6 +23,7 @@ const DeckEntryDisplay = (props) => {
             <div> 
                 <article style={DeckEntry}>
                     <h3>{props.deck_name}</h3>
+                    <p>By: {props.deck_author}</p>
                     <div style={DeckEntryContainer}>
 
                         <p>{props.deck_link}</p>
@@ -70,20 +53,20 @@ const DeckEntryDisplay = (props) => {
                         </section>
                         <section style={ImageContainer}>
                             <div style={ImageHolder}>
-                                <img style={ImageObject} src={props.deck_commander_one_ref}/>
+                                <img style={ImageObject} alt={props.deck_commander_one} src={props.deck_commander_one_ref}/>
                             </div>
                             <div style={ImageHolder}>
-                                <img style={ImageObject} src={props.deck_commander_two_ref}/>
+                                <img style={ImageObject} alt={props.deck_commander_two} src={props.deck_commander_two_ref}/>
                             </div>
                         </section>
                         <div style={TagPrimary}>{props.tag_primary}</div>
+                        <div style={TagResult}>{props.deck_results}</div>
                         <section style={TagContainer}>
                             <div style={TagHolder}>{props.tag_one}</div>
                             <div style={TagHolder}>{props.tag_two}</div>
                             <div style={TagHolder}>{props.tag_three}</div>
                             <div style={TagHolder}>{props.tag_four}</div>
                         </section>
-                        <p>{props.deck_category}</p>
                     </div>
                 </article>
             </div>
@@ -190,11 +173,18 @@ const TagPrimary = {
     margin: '2px auto'
 }
 
+const TagResult = {
+    width: '80%',
+    backgroundColor: 'lightgreen',
+    textAlign: 'center',
+    margin: '2px auto'
+}
+
 const TagContainer = {
     display: 'flex',
     flexDirection: 'col',
     flexWrap: 'wrap',
-    justifyContent: 'flex-start'
+    justifyContent: 'center'
 }
 
 const TagHolder = {

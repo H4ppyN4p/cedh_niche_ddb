@@ -15,7 +15,7 @@ const CreateDeck = () => {
     
 
     function uploadImage (){
-      if (commanderTwo != '') {
+      if (commanderTwo !== '') {
 
         const imgRef = ref(image, `commanders/${v4()}`)
         uploadBytes(imgRef, img).then((snapshot => {

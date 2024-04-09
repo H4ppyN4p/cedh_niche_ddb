@@ -31,7 +31,7 @@ const Root = () => {
         <div style={Container}>
             <ul>
                 <li style={ListElement}>
-                    <Link to={'/maindecks'}>Home</Link>
+                    <Link to={'/'}>Fringe Decks</Link>
                 </li>
                 <li style={ListElement}>
                     <Link to={'/outdateddecks'}>Outdated Decks</Link>
@@ -39,14 +39,15 @@ const Root = () => {
                 <li style={ListElement}>
                     <Link to={'/newdecks'}>New Decks</Link>
                 </li>
+                <li style={ListElement}>
+                    <Link to={'/metadecks'}>Meta Decks</Link>
+                </li>
 
               
                 { user ? (
                         <li style={ListElement}>
                             <Link style={LoggedInStyle} to={'/createdecks'}>Create decks</Link>
                             <Link style={LoggedInStyle} to={'/editdecks'}>Edit decks</Link>
-                            <Link style={LoggedInStyle} to={'/uploadcommander'}>Upload Commander images</Link>
-
                             <button onClick={signOutFromFirebase}>Logout</button>
                         </li>
                       
