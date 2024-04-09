@@ -3,31 +3,28 @@ import { useState } from "react"
 const DeckEntryDisplay = (props) => {
 
     /*
-    //handle images for firebase
-    const [img, setImg] = useState('') 
-    const [imgTwo, setImgTwo] = useState('') 
-
-    //states to hold and manage values
-    const [category, setCategory] = useState('Fringe')
-    const [deckName, setDeckName] = useState('')
-    const [deckAuthor, setDeckAuthor] = useState('')
-    const [commanderOne, setCommanderOne] = useState('')
-    const [commanderTwo, setCommanderTwo] = useState('')
-    const [deckDescription, setDeckDescription] = useState('')
-    const [deckLink, setDeckLink] = useState('')
-    const [discordLink, setDiscordLink] = useState('')
-    const [isColourless, setIsColourless] = useState(false)
-    const [isWhite, setIsWhite] = useState(false)
-    const [isBlue, setIsBlue] = useState(false)
-    const [isBlack, setIsBlack] = useState(false)
-    const [isRed, setIsRed] = useState(false)
-    const [isGreen, setIsGreen] = useState(false)
-    const [top16, setTop16] = useState('None')
-    const [tagPrimary, setTagPrimary] = useState('Stax')
-    const [tag1, setTag1] = useState('')
-    const [tag2, setTag2] = useState('')
-    const [tag3, setTag3] = useState('')
-    const [tag4, setTag4] = useState('')
+    id={e.id}
+    deck_author={e.deck_author}
+    deck_category={e.deck_category}
+    deck_commander_one={e.deck_commander_one}
+    deck_commander_one_ref={e.deck_commander_one_ref}
+    deck_commander_two={e.deck_commander_two}
+    deck_commander_two_ref={e.deck_commander_two_ref}
+    deck_description={e.deck_description}
+    deck_link={e.deck_link}
+    deck_name={e.deck_name}
+    deck_results={e.deck_results}
+    is_black={e.is_black}
+    is_blue={e.is_blue}
+    is_colourless={e.is_colourless}
+    is_green={e.is_green}
+    is_red={e.is_red}
+    is_white={e.is_white}
+    tag_primary={e.tag_primary}
+    tag_one={e.tag_one}
+    tag_two={e.tag_two}
+    tag_three={e.tag_three}
+    tag_four={e.tag_four}
     */
 
 
@@ -42,56 +39,57 @@ const DeckEntryDisplay = (props) => {
         <>
         { props.deck_commander_two ? (
             <div> 
-                <div style={DeckEntry}></div>
-               <ul style={DeckEntryStyle}>
-                    <li><p>Deck name: {props.deck_name}</p></li>
-                    <li> <p>Deck author: {props.deck_author} </p></li>
-                    <li> <p>Commander one:  {props.deck_commander_one} </p></li>
-                    <li> <p>Commander two:  {props.deck_commander_two} </p></li>
-                    <li> <p>Deck description: {props.deck_description} </p></li>
-                    <li> <p>Deck link: {props.deck_link} </p></li>
-                    <li> <p>Discord link: {props.discord_link}</p> </li>
-                    <li> <p>Deck resulsts: {props.deck_results} </p></li>
-                    <li> <p>Archetype: {props.tag_primary}</p></li>
-                    <li>
-                        <div>
-                            <label>Colourless</label>
-                            <input type="checkbox" id="colourless" checked={isColourless} readOnly={true}/>
-                        </div>
-                        <div>
-                            <label>White</label>
-                            <input type="checkbox" id="white" checked={isWhite} readOnly={true}/>
-                        </div>
-                        <div>
-                            <label>Blue</label>
-                            <input type="checkbox" id="blue" checked={isBlue} readOnly={true}/>
-                        </div>
-                        <div>
-                            <label>Black</label>
-                            <input type="checkbox" id="black" checked={isBlack} readOnly={true}/>
-                        </div>
-                        <div>
-                            <label>Red</label>
-                            <input type="checkbox" id="red" checked={isRed} readOnly={true}/>
-                        </div>
-                        <div>
-                            <label>Green</label>
-                            <input type="checkbox" id="green" checked={isGreen} readOnly={true}/>
-                        </div>
-                    </li>
-                    <li style={{border: "2px solid green"}}>
-                        <div>
-                            <p>{props.tag_one}</p>
-                            <p>{props.tag_two}</p>
-                            <p>{props.tag_three}</p>
-                            <p>{props.tag_four}</p>
-                        </div>
-                    </li>
-                </ul>
+                <article style={DeckEntry}>
+                    <h3>{props.deck_name}</h3>
+                    <div style={DeckEntryContainer}>
+
+                        <p>{props.deck_link}</p>
+                        <p>Discord server link: {props.discord_link}</p>
+                        <section style={IsColoursContainer}>
+
+                            <div>
+                                <label>White</label>
+                                <input type="checkbox" id="white" checked={isWhite} readOnly={true}/>
+                            </div>
+                            <div>
+                                <label>Blue</label>
+                                <input type="checkbox" id="blue" checked={isBlue} readOnly={true}/>
+                            </div>
+                            <div>
+                                <label>Black</label>
+                                <input type="checkbox" id="black" checked={isBlack} readOnly={true}/>
+                            </div>
+                            <div>
+                                <label>Red</label>
+                                <input type="checkbox" id="red" checked={isRed} readOnly={true}/>
+                            </div>
+                            <div>
+                                <label>Green</label>
+                                <input type="checkbox" id="green" checked={isGreen} readOnly={true}/>
+                            </div>
+                        </section>
+                        <section style={ImageContainer}>
+                            <div style={ImageHolder}>
+                                <img style={ImageObject} src={props.deck_commander_one_ref}/>
+                            </div>
+                            <div style={ImageHolder}>
+                                <img style={ImageObject} src={props.deck_commander_two_ref}/>
+                            </div>
+                        </section>
+                        <div style={TagPrimary}>{props.tag_primary}</div>
+                        <section style={TagContainer}>
+                            <div style={TagHolder}>{props.tag_one}</div>
+                            <div style={TagHolder}>{props.tag_two}</div>
+                            <div style={TagHolder}>{props.tag_three}</div>
+                            <div style={TagHolder}>{props.tag_four}</div>
+                        </section>
+                        <p>{props.deck_category}</p>
+                    </div>
+                </article>
             </div>
         ) : 
             <> 
-                  <ul style={DeckEntryStyle}>
+                  <ul>
                     <li><p>Deck name: {props.deck_name}</p></li>
                     <li> <p>Deck author: {props.deck_author} </p></li>
                     <li> <p>Commander one:  {props.deck_commander_one} </p></li>
@@ -103,7 +101,6 @@ const DeckEntryDisplay = (props) => {
                     <li>
                         <div>
                             <label>Colourless</label>
-                            <input type="checkbox" id="colourless" checked={isColourless} readOnly={true}/>
                         </div>
                         <div>
                             <label>White</label>
@@ -148,12 +145,60 @@ const DeckEntryDisplay = (props) => {
 
 export default DeckEntryDisplay
 
-const DeckEntryStyle = {
-    border: '2px solid red'
-}
 
 const DeckEntry = {
     border: '2px solid green',
     minHeight: '200px',
-    width: '300px'
+    width: '330px',
+}
+
+const DeckEntryContainer = {
+    width: '80%',
+    margin: 'auto',
+    backgroundColor: 'lightgrey'
+}
+
+const IsColoursContainer = {
+    display: 'flex',
+    flexDirection: 'col'
+}
+
+const ImageContainer = {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center'
+}
+
+const ImageHolder = {
+    height: '200px',
+    aspectRatio: '1 / 1.4',
+    margin: '5px'
+
+}
+
+const ImageObject = {
+    display: 'block',
+    width: '100%',
+    height: '100%',
+    borderRadius: '7px',
+}
+
+const TagPrimary = {
+    width: '80%',
+    backgroundColor: 'pink',
+    textAlign: 'center',
+    margin: '2px auto'
+}
+
+const TagContainer = {
+    display: 'flex',
+    flexDirection: 'col',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-start'
+}
+
+const TagHolder = {
+    width: '40%',
+    margin: '2px',
+    backgroundColor: 'lightblue'
 }
