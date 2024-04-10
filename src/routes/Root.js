@@ -6,6 +6,10 @@ import { useAuthState, } from "react-firebase-hooks/auth";
 
 //Firebase
 
+import { coloursArray    } from "../ColourConsts";
+
+const bgValue = '#68896e'
+
 
 
 const Root = () => {
@@ -52,7 +56,7 @@ const Root = () => {
         </nav>
 
         <div style={{padding: '20px', 
-        backgroundColor: '#72BFD7',
+        backgroundColor: '#4f664a',
 
         }}></div>
         <div style={Content}>
@@ -88,6 +92,6 @@ const LoggedInElements = {
 
 const Content = {
     minHeight: '500px',
-    backgroundColor: '#72BFD7'
+    backgroundColor: coloursArray.BgColour
 }
 

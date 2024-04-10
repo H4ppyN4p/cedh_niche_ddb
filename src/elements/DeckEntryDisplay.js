@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+import { coloursArray } from "../ColourConsts"
+
 const DeckEntryDisplay = (props) => {
 
     /*
@@ -138,7 +140,7 @@ const DeckEntry = {
 const DeckEntryContainer = {
     width: '80%',
     margin: 'auto',
-    backgroundColor: 'lightgrey',
+    backgroundColor: coloursArray.cardColour,
     height: '100%'
 }
 
