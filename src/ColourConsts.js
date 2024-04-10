@@ -1,8 +1,10 @@
 
 const coloursArray = {
     BgColour: '#33516f',
-    cardHeader: '#0e334c',
-    cardColour: '#6291a8',
+    headerColour: '#163c56',
+    headerBorder: '#082d40',
+    entryColour: '#6291a8',
+    entryBorder: '#082d40'
 
 }
 

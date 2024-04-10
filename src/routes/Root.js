@@ -94,7 +94,6 @@ const LoggedInElements = {
 
 const Content = {
     position: 'relative',
-    zIndex: -5,
     minHeight: '500px',
     backgroundColor: coloursArray.BgColour
 }

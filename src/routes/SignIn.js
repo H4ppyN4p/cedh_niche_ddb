@@ -20,7 +20,7 @@ const SignIn = () => {
     }
 
     return(
-        <>
+        <div>
         <div>
             <label htmlFor="email">Email:</label>
             <input type="text" value={userEmail} name="email" onInput={e => setUserEmail(e.target.value)}></input>
@@ -30,8 +30,13 @@ const SignIn = () => {
             <input type="text" value={userPass} name="password" onInput={e => setUserPass(e.target.value)}></input>
         </div>
         <button onClick={checkCredentials}>Button to login</button>
-        </>
+        </div>
     )
 }
 
 export default SignIn;
+
+const Loginform = {
+    position: 'relative',
+    zIndex: 2
+}
