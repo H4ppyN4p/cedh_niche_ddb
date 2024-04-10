@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import { coloursArray } from "../ColourConsts"
+import { cssArray } from "../ColourConsts"
 
 const DeckEntryDisplay = (props) => {
 
@@ -154,15 +154,15 @@ const DeckEntry = {
 }
 
 const DeckEntryHeader = {
-    backgroundColor: coloursArray.headerColour,
+    backgroundColor: cssArray.headerColour,
     left: '6%',
     width: '92%',
     margin: 'auto',
     position: 'absolute',
     paddingBottom: '10px',
     color: 'lightgray',
-    border: `3px solid ${coloursArray.headerBorder}`,
-    borderRadius: '2px',
+    border: `3px solid ${cssArray.headerBorder}`,
+    borderRadius: cssArray.entryBorderRadius,
     boxShadow: '4px 4px 4px rgb(0 0 0 / 0.2)'
 
 }
@@ -176,11 +176,11 @@ const DeckEntryContainer = {
     width: '80%',
     paddingTop: '10px',
     margin: 'auto',
-    backgroundColor: coloursArray.entryColour,
+    backgroundColor: cssArray.entryColour,
     height: '100%',
     position: 'relative',
-    border: `3px solid ${coloursArray.entryBorder}`,
-    borderRadius: '3px',
+    border: `3px solid ${cssArray.entryBorder}`,
+    borderRadius: cssArray.entryBorderRadius,
     boxShadow: '8px 8px 5px rgb(0 0 0 / 0.2)'
 }
 

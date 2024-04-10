@@ -6,7 +6,7 @@ import { useAuthState, } from "react-firebase-hooks/auth";
 
 //Firebase
 
-import { coloursArray    } from "../ColourConsts";
+import { cssArray    } from "../ColourConsts";
 import Footer from "../elements/Footer";
 
 
@@ -95,12 +95,12 @@ const LoggedInElements = {
 const Content = {
     position: 'relative',
     minHeight: '500px',
-    backgroundColor: coloursArray.BgColour
+    backgroundColor: cssArray.BgColour
 }
 
 const PaddingElement = {
     padding: '20px', 
-    backgroundColor: coloursArray.BgColour,
+    backgroundColor: cssArray.BgColour,
 }
 
 
