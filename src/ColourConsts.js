@@ -1,10 +1,14 @@
 
 const coloursArray = {
     BgColour: '#33516f',
-    altBg: '#336f6b',
+    cardHeader: '#0e334c',
     cardColour: '#6291a8',
-    altCard: '#62a8a1'
 
+}
+
+const altColoursArray = {
+    altBg: '#336f6b',
+    altCard: '#62a8a1'
 }
 
 

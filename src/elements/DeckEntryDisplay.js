@@ -24,8 +24,10 @@ const DeckEntryDisplay = (props) => {
         { props.deck_commander_two ? (
             <div> 
                 <article style={DeckEntry}>
-                    <h3>{props.deck_name}</h3>
-                    <p>By: {props.deck_author}</p>
+                    <section style={DeckEntryHeader}>
+                        <h3>{props.deck_name}</h3>
+                        <p>By: {props.deck_author}</p>
+                    </section>
                     <div style={DeckEntryContainer}>
 
                         <p>{props.deck_link}</p>
@@ -134,14 +136,27 @@ export default DeckEntryDisplay
 const DeckEntry = {
     minHeight: '390px',
     width: '320px',
-    margin: '10px 40px',
+    margin: '20px 40px',
+    position: 'relative'
+}
+
+const DeckEntryHeader = {
+    backgroundColor: coloursArray.cardHeader,
+    left: '6%',
+    width: '92%',
+    margin: 'auto',
+    position: 'absolute',
+    paddingBottom: '10px'
 }
 
 const DeckEntryContainer = {
+    top: '40px',
     width: '80%',
+    paddingTop: '10px',
     margin: 'auto',
     backgroundColor: coloursArray.cardColour,
-    height: '100%'
+    height: '100%',
+    position: 'relative'
 }
 
 const IsColoursContainer = {

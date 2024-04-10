@@ -7,8 +7,7 @@ import { useAuthState, } from "react-firebase-hooks/auth";
 //Firebase
 
 import { coloursArray    } from "../ColourConsts";
-
-const bgValue = '#68896e'
+import Footer from "../elements/Footer";
 
 
 
@@ -55,13 +54,15 @@ const Root = () => {
             }          
         </nav>
 
-        <div style={{padding: '20px', 
-        backgroundColor: '#4f664a',
+        <div style={PaddingElement}></div>
 
-        }}></div>
         <div style={Content}>
             <Outlet />
         </div>
+
+        <div style={PaddingElement}></div>
+        
+        <Footer />
         </>
     )
 }
@@ -75,6 +76,7 @@ const Container = {
     flexDirection: 'row',
     backgroundColor: '#D77272',
     position: 'fixed',
+    zIndex: 50,
     width: '100%',
     alignItems: 'flex-end'
 
@@ -91,7 +93,15 @@ const LoggedInElements = {
 }
 
 const Content = {
+    position: 'relative',
+    zIndex: -5,
     minHeight: '500px',
     backgroundColor: coloursArray.BgColour
 }
+
+const PaddingElement = {
+    padding: '20px', 
+    backgroundColor: coloursArray.BgColour,
+}
+
 

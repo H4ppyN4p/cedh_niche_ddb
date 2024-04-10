@@ -5,7 +5,6 @@ import ReactDOM from "react-dom/client";
 //Site elements
 //import Navbar from "./elements/Navbar"
 import App from "./App"
-import Footer from "./elements/Footer";
 
 //Context
 import { DatabaseContextProvider } from "./contexts/DatabaseContextProvider";
@@ -22,7 +21,6 @@ root.render(
   <React.StrictMode>
     <DatabaseContextProvider>    
       <App />
-      <Footer />
     </DatabaseContextProvider>
 
   </React.StrictMode>
