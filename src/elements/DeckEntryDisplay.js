@@ -4,20 +4,192 @@ import { cssArray } from "../ColourConsts"
 
 const DeckEntryDisplay = (props) => {
 
-    /*
-    id={e.id}
-    deck_commander_one={e.deck_commander_one}
-    deck_commander_two={e.deck_commander_two}
-    deck_description={e.deck_description}
-    */
-
-
-    const [isColourless] = useState(props.is_colourless)
     const [isWhite] = useState(props.is_white)
     const [isBlue] = useState(props.is_blue)
     const [isBlack] = useState(props.is_black)
     const [isRed] = useState(props.is_red)
     const [isGreen] = useState(props.is_green)
+
+    const [imageHeight, setImageHeight] = useState('200px')
+    const [imagePosition, setImagePosition] = useState('relative')
+    const [imageBlockHeight, setImageBlockHeight] = useState('0') 
+    const [imageZIndex, setImageZIndex] = useState()
+    const [imageBottom, setImageBottom] = useState('0')
+    
+
+    function onImageHover(){
+        setImageHeight('380px')
+        setImagePosition('absolute')
+        setImageBlockHeight('210px')
+        setImageZIndex(2)
+        setImageBottom('70')
+    }
+
+    function onImageHoverLeave(){
+        setImageHeight('200px')
+        setImagePosition('relative')
+        setImageBlockHeight('0')
+        setImageZIndex()
+        setImageBottom('0')
+    }
+
+    const [imageHeightTwo, setImageHeightTwo] = useState('200px')
+    const [imagePositionTwo, setImagePositionTwo] = useState('relative')
+    const [imageZIndexTwo, setImageZIndexTwo] = useState()
+    const [imageBottomTwo, setImageBottomTwo] = useState('0')
+
+
+
+
+    function onImageTwoHover(){
+        setImageHeightTwo('380px')
+        setImagePositionTwo('absolute')
+        setImageBlockHeight('210px')
+        setImageZIndexTwo(2)
+        setImageBottomTwo('70')
+    }
+
+    function onImageTwoHoverLeave(){
+        setImageHeightTwo('200px')
+        setImagePositionTwo('relative')
+        setImageBlockHeight('0')
+        setImageZIndexTwo(0)
+        setImageBottomTwo('0')
+    }
+
+
+    const DeckEntry = {
+        minHeight: '410px',
+        width: '320px',
+        margin: '20px 40px',
+        position: 'relative',
+    }
+    
+    const DeckEntryHeader = {
+        backgroundColor: cssArray.headerColour,
+        left: '6%',
+        width: '92%',
+        margin: 'auto',
+        position: 'absolute',
+        paddingBottom: '10px',
+        color: 'lightgray',
+        border: `3px solid ${cssArray.headerBorder}`,
+        borderRadius: cssArray.entryBorderRadius,
+        boxShadow: '4px 4px 4px rgb(0 0 0 / 0.2)'
+    
+    }
+    
+    const DeckEntryHeaderText = {
+        marginLeft: '5px'
+    }
+    
+    const DeckEntryContainer = {
+        top: '44px',
+        width: '80%',
+        paddingTop: '10px',
+        margin: 'auto',
+        backgroundColor: cssArray.entryColour,
+        height: '100%',
+        position: 'relative',
+        border: `3px solid ${cssArray.entryBorder}`,
+        borderRadius: cssArray.entryBorderRadius,
+        boxShadow: '8px 8px 5px rgb(0 0 0 / 0.2)'
+    }
+    
+    const DeckEntryContainerText = {
+        paddingLeft: '2px'
+    }
+    
+    const IsColoursContainer = {
+        display: 'flex',
+        flexDirection: 'col'
+    }
+    
+    const ImageContainer = {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center'
+    }
+    
+    const ImageHolder = {
+        height: imageHeight,
+        position: imagePosition,
+        zIndex: imageZIndex,
+        bottom: imageBottom,
+        aspectRatio: '1 / 1.4',
+        margin: '5px',
+    }
+
+    const ImageHolderTwo = {
+        height: imageHeightTwo,
+        position: imagePositionTwo,
+        zIndex: imageZIndexTwo,
+        bottom: imageBottomTwo,
+        aspectRatio: '1 / 1.4',
+        margin: '5px',
+    }
+    
+    const ImageBlock = {
+        height: imageBlockHeight
+    }
+    
+    const ImageObject = {
+        display: 'block',
+        width: '100%',
+        height: '100%',
+        borderRadius: '7px',
+        boxShadow: '4px 4px 2px rgb(0 0 0 / 0.2)',
+        
+    }
+    
+    const TagPrimary = {
+        width: '80%',
+        backgroundColor: cssArray.tagArchetypeColour,
+        textAlign: 'center',
+        margin: '2px auto',
+        border: `2px solid ${cssArray.tagsBorder}`,
+        borderRadius: '6px',
+        boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
+    
+    }
+    
+    const TagResult = {
+        width: '80%',
+        backgroundColor: cssArray.tagResultColour,
+        textAlign: 'center',
+        margin: '2px auto',
+        border: `2px solid ${cssArray.tagsBorder}`,
+        borderRadius: '6px',
+        boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
+    
+    
+    }
+    
+    const TagContainer = {
+        display: 'flex',
+        flexDirection: 'col',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        minHeight: '45px',
+        marginBottom: '5px',
+    
+    }
+    
+    const TagHolder = {
+        width: '40%',
+        margin: '2px',
+        backgroundColor: cssArray.tagStrategiesColour,
+        height: '20px',
+        border: `2px solid ${cssArray.tagsBorder}`,
+        textAlign: 'center',
+        borderRadius: '6px',
+        boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
+    
+    
+    }
+
+   
+    
 
     return(
         <>
@@ -58,10 +230,18 @@ const DeckEntryDisplay = (props) => {
                                 </div>
                             </section>
                             <section style={ImageContainer}>
-                                <div style={ImageHolder}>
+                                <div style={ImageBlock}></div>
+                                
+                                <div
+                                onMouseEnter={() => onImageHover()} 
+                                onMouseLeave={() => onImageHoverLeave()}
+                                style={ImageHolder}>
                                     <img style={ImageObject} alt={props.deck_commander_one} src={props.deck_commander_one_ref}/>
                                 </div>
-                                <div style={ImageHolder}>
+                                <div
+                                onMouseEnter={() => onImageTwoHover()} 
+                                onMouseLeave={() => onImageTwoHoverLeave()}
+                                style={ImageHolderTwo}>
                                     <img style={ImageObject} alt={props.deck_commander_two} src={props.deck_commander_two_ref}/>
                                 </div>
                             </section>
@@ -79,7 +259,7 @@ const DeckEntryDisplay = (props) => {
             </div>
         ) : 
             <> 
-                   <div> 
+            <div> 
                 <article style={DeckEntry}>
                     <section style={DeckEntryHeader}>
                         <div style={DeckEntryHeaderText}>
@@ -88,10 +268,9 @@ const DeckEntryDisplay = (props) => {
                         </div>
                     </section>
                     <section style={DeckEntryContainer}>
-                        
                         <div style={DeckEntryContainerText}>
-
                             <a href={props.deck_link}>Deck link</a>
+
                             <p>Discord server link: {props.discord_link}</p>
                             <section style={IsColoursContainer}>
 
@@ -117,7 +296,12 @@ const DeckEntryDisplay = (props) => {
                                 </div>
                             </section>
                             <section style={ImageContainer}>
-                                <div style={ImageHolder}>
+                                <div style={ImageBlock}></div>
+
+                                <div 
+                                onMouseEnter={() => onImageHover()} 
+                                onMouseLeave={() => onImageHoverLeave()}
+                                style={ImageHolder}>
                                     <img style={ImageObject} alt={props.deck_commander_one} src={props.deck_commander_one_ref}/>
                                 </div>
                             </section>
@@ -141,105 +325,12 @@ const DeckEntryDisplay = (props) => {
     
         </>
     )
+
+
+    
+
 }
 
 export default DeckEntryDisplay
 
 
-const DeckEntry = {
-    minHeight: '390px',
-    width: '320px',
-    margin: '20px 40px',
-    position: 'relative'
-}
-
-const DeckEntryHeader = {
-    backgroundColor: cssArray.headerColour,
-    left: '6%',
-    width: '92%',
-    margin: 'auto',
-    position: 'absolute',
-    paddingBottom: '10px',
-    color: 'lightgray',
-    border: `3px solid ${cssArray.headerBorder}`,
-    borderRadius: cssArray.entryBorderRadius,
-    boxShadow: '4px 4px 4px rgb(0 0 0 / 0.2)'
-
-}
-
-const DeckEntryHeaderText = {
-    marginLeft: '5px'
-}
-
-const DeckEntryContainer = {
-    top: '44px',
-    width: '80%',
-    paddingTop: '10px',
-    margin: 'auto',
-    backgroundColor: cssArray.entryColour,
-    height: '100%',
-    position: 'relative',
-    border: `3px solid ${cssArray.entryBorder}`,
-    borderRadius: cssArray.entryBorderRadius,
-    boxShadow: '8px 8px 5px rgb(0 0 0 / 0.2)'
-}
-
-const DeckEntryContainerText = {
-    paddingLeft: '2px'
-}
-
-const IsColoursContainer = {
-    display: 'flex',
-    flexDirection: 'col'
-}
-
-const ImageContainer = {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center'
-}
-
-const ImageHolder = {
-    height: '200px',
-    aspectRatio: '1 / 1.4',
-    margin: '5px'
-
-}
-
-const ImageObject = {
-    display: 'block',
-    width: '100%',
-    height: '100%',
-    borderRadius: '7px',
-    boxShadow: '4px 4px 2px rgb(0 0 0 / 0.2)'
-    
-}
-
-const TagPrimary = {
-    width: '80%',
-    backgroundColor: 'pink',
-    textAlign: 'center',
-    margin: '2px auto'
-}
-
-const TagResult = {
-    width: '80%',
-    backgroundColor: 'lightgreen',
-    textAlign: 'center',
-    margin: '2px auto'
-}
-
-const TagContainer = {
-    display: 'flex',
-    flexDirection: 'col',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    minHeight: '45px'
-}
-
-const TagHolder = {
-    width: '40%',
-    margin: '2px',
-    backgroundColor: 'lightblue',
-    height: '20px'
-}

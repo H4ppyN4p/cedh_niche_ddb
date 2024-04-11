@@ -6,8 +6,11 @@ const cssArray = {
     headerBorderRadius: '7px',
     entryColour: '#6291a8',
     entryBorder: '#082d40',
-    entryBorderRadius: '7px'
-
+    entryBorderRadius: '7px',
+    tagArchetypeColour: '#a86290',
+    tagResultColour: '#4bb692',
+    tagStrategiesColour: '#6fbaca',
+    tagsBorder: '#33516f',
 }
 
 const altcssArray = {

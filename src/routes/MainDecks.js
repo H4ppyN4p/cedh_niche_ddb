@@ -57,7 +57,6 @@ const MainDecks = () => {
 
     return(
         <>
-        <div>Main list of decks niche decks</div>
             <div style={EntryContainer}>
                 {decksToShow && decksToShow.map((e) => {
                     return (
