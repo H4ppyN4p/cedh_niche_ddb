@@ -18,7 +18,7 @@ const DeckEntryDisplay = (props) => {
     
 
     function onImageHover(){
-        setImageHeight('380px')
+        setImageHeight('383px')
         setImagePosition('absolute')
         setImageBlockHeight('210px')
         setImageZIndex(2)
@@ -42,7 +42,7 @@ const DeckEntryDisplay = (props) => {
 
 
     function onImageTwoHover(){
-        setImageHeightTwo('380px')
+        setImageHeightTwo('383px')
         setImagePositionTwo('absolute')
         setImageBlockHeight('210px')
         setImageZIndexTwo(2)
@@ -71,7 +71,7 @@ const DeckEntryDisplay = (props) => {
         width: '92%',
         margin: 'auto',
         position: 'absolute',
-        paddingBottom: '10px',
+        paddingBottom: '50px',
         color: 'lightgray',
         border: `3px solid ${cssArray.headerBorder}`,
         borderRadius: cssArray.entryBorderRadius,
@@ -93,7 +93,7 @@ const DeckEntryDisplay = (props) => {
         position: 'relative',
         border: `3px solid ${cssArray.entryBorder}`,
         borderRadius: cssArray.entryBorderRadius,
-        boxShadow: '8px 8px 5px rgb(0 0 0 / 0.2)'
+        boxShadow: '10px 10px 5px rgb(60 20 20 / 0.2)'
     }
     
     const DeckEntryContainerText = {
@@ -204,9 +204,11 @@ const DeckEntryDisplay = (props) => {
                     </section>
                     <section style={DeckEntryContainer}>
                         <div style={DeckEntryContainerText}>
-                            <a href={props.deck_link}>Deck link</a>
+                            <div>
+                                <a href={props.deck_link}>Deck link</a>
 
-                            <p>Discord server link: {props.discord_link}</p>
+                                <a href={props.discord_link} style={{float: 'right'}}>Discord Link</a>
+                            </div>
                             <section style={IsColoursContainer}>
                                 <div>
                                     <label>White</label>
@@ -269,9 +271,11 @@ const DeckEntryDisplay = (props) => {
                     </section>
                     <section style={DeckEntryContainer}>
                         <div style={DeckEntryContainerText}>
-                            <a href={props.deck_link}>Deck link</a>
+                            <div>
+                                <a href={props.deck_link}>Deck link</a>
 
-                            <p>Discord server link: {props.discord_link}</p>
+                                <a href={props.discord_link} style={{float: 'right'}}>Discord Link</a>
+                            </div>
                             <section style={IsColoursContainer}>
 
                                 <div>
