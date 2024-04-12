@@ -2,7 +2,6 @@
 const cssArray = {
     BgColour: '#33516f',
     headerColour: '#163c56',
-    altHeaderColour: '49283e',
     headerBorder: '#082d40',
     headerBorderRadius: '7px',
     entryColour: '#6291a8',
@@ -14,10 +13,38 @@ const cssArray = {
     tagsBorder: '#33516f',
 }
 
+const cssAltOneArray = {
+    BgColour: '#233750',
+    headerColour: '#49283e',
+    headerBorder: '#082d40',
+    headerBorderRadius: '7px',
+    entryColour: '#6291a8',
+    entryBorder: '#0f567b',
+    entryBorderRadius: '7px',
+    tagArchetypeColour: '#49283e',
+    tagResultColour: '#83486f',
+    tagStrategiesColour: '#6fbaca',
+    tagsBorder: '#33516f',
+}
+
+const cssAltTwoArray = {
+    BgColour: '#3c4142',
+    headerColour: '#320465',
+    headerBorder: '#1b0236',
+    headerBorderRadius: '7px',
+    entryColour: '#708090',
+    entryBorder: '#320465',
+    entryBorderRadius: '7px',
+    tagArchetypeColour: '#3c4142',
+    tagResultColour: '#899ab5',
+    tagStrategiesColour: '#ab65f8',
+    tagsBorder: '#320465',
+}
+
 const altcssArray = {
     altBg: '#336f6b',
     altCard: '#62a8a1'
 }
 
 
-export { cssArray }
+export { cssArray, cssAltOneArray, cssAltTwoArray }
