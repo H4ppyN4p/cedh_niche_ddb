@@ -41,10 +41,20 @@ const cssAltTwoArray = {
     tagsBorder: '#320465',
 }
 
-const altcssArray = {
-    altBg: '#336f6b',
-    altCard: '#62a8a1'
+const cssAltThreeArray = {
+    BgColour: '#3c4142',
+    headerColour: '#49283e',
+    headerBorder: '#1b0236',
+    headerBorderRadius: '7px',
+    entryColour: '#233750',
+    entryBorder: '#1b0236',
+    entryBorderRadius: '7px',
+    tagArchetypeColour: '#3c4142',
+    tagResultColour: '#899ab5',
+    tagStrategiesColour: '#ab65f8',
+    tagsBorder: '#320465',
 }
 
 
-export { cssArray, cssAltOneArray, cssAltTwoArray }
+
+export { cssArray, cssAltOneArray, cssAltTwoArray, cssAltThreeArray }

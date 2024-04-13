@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import { cssAltTwoArray } from "../ColourConsts"
+import { cssAltThreeArray } from "../ColourConsts"
 
 const DeckEntryDisplay = (props) => {
 
@@ -66,15 +66,15 @@ const DeckEntryDisplay = (props) => {
     }
     
     const DeckEntryHeader = {
-        backgroundColor: cssAltTwoArray.headerColour,
+        backgroundColor: cssAltThreeArray.headerColour,
         left: '6%',
         width: '92%',
         margin: 'auto',
         position: 'absolute',
         paddingBottom: '50px',
         color: 'lightgray',
-        border: `3px solid ${cssAltTwoArray.headerBorder}`,
-        borderRadius: cssAltTwoArray.entryBorderRadius,
+        border: `3px solid ${cssAltThreeArray.headerBorder}`,
+        borderRadius: cssAltThreeArray.entryBorderRadius,
         boxShadow: '4px 4px 4px rgb(0 0 0 / 0.2)'
     
     }
@@ -88,11 +88,11 @@ const DeckEntryDisplay = (props) => {
         width: '80%',
         paddingTop: '10px',
         margin: 'auto',
-        backgroundColor: cssAltTwoArray.entryColour,
+        backgroundColor: cssAltThreeArray.entryColour,
         height: '100%',
         position: 'relative',
-        border: `3px solid ${cssAltTwoArray.entryBorder}`,
-        borderRadius: cssAltTwoArray.entryBorderRadius,
+        border: `3px solid ${cssAltThreeArray.entryBorder}`,
+        borderRadius: cssAltThreeArray.entryBorderRadius,
         boxShadow: '10px 10px 5px rgb(60 20 20 / 0.2)'
     }
     
@@ -144,10 +144,10 @@ const DeckEntryDisplay = (props) => {
     
     const TagPrimary = {
         width: '80%',
-        backgroundColor: cssAltTwoArray.tagArchetypeColour,
+        backgroundColor: cssAltThreeArray.tagArchetypeColour,
         textAlign: 'center',
         margin: '2px auto',
-        border: `2px solid ${cssAltTwoArray.tagsBorder}`,
+        border: `2px solid ${cssAltThreeArray.tagsBorder}`,
         borderRadius: '6px',
         boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
     
@@ -155,10 +155,10 @@ const DeckEntryDisplay = (props) => {
     
     const TagResult = {
         width: '80%',
-        backgroundColor: cssAltTwoArray.tagResultColour,
+        backgroundColor: cssAltThreeArray.tagResultColour,
         textAlign: 'center',
         margin: '2px auto',
-        border: `2px solid ${cssAltTwoArray.tagsBorder}`,
+        border: `2px solid ${cssAltThreeArray.tagsBorder}`,
         borderRadius: '6px',
         boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
     
@@ -178,9 +178,9 @@ const DeckEntryDisplay = (props) => {
     const TagHolder = {
         width: '40%',
         margin: '2px',
-        backgroundColor: cssAltTwoArray.tagStrategiesColour,
+        backgroundColor: cssAltThreeArray.tagStrategiesColour,
         height: '20px',
-        border: `2px solid ${cssAltTwoArray.tagsBorder}`,
+        border: `2px solid ${cssAltThreeArray.tagsBorder}`,
         textAlign: 'center',
         borderRadius: '6px',
         boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
