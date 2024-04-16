@@ -2,6 +2,17 @@ import { useState } from "react"
 
 import { cssAltThreeArray } from "../ColourConsts"
 
+import black from "../images/symbolBlack.png"
+import red from "../images/symbolRed.png"
+import green from "../images/symbolGreen.png"
+import blue from "../images/symbolBlue.png"
+import white from "../images/symbolWhite.png"
+import blackOff from "../images/symbolBlackOff.png"
+import redOff from "../images/symbolRedOff.png"
+import greenOff from "../images/symbolGreenOff.png"
+import blueOff from "../images/symbolBlueOff.png"
+import whiteOff from "../images/symbolWhiteOff.png"
+
 const DeckEntryDisplay = (props) => {
 
     const [isWhite] = useState(props.is_white)
@@ -102,7 +113,10 @@ const DeckEntryDisplay = (props) => {
     
     const IsColoursContainer = {
         display: 'flex',
-        flexDirection: 'col'
+        flexDirection: 'col',
+        justifyContent: 'space-around',
+        width: '70%',
+        margin: 'auto'
     }
     
     const ImageContainer = {
@@ -188,6 +202,12 @@ const DeckEntryDisplay = (props) => {
     
     }
 
+    const pipStyle = {
+        width: '20px',
+        aspectRatio: '1/1',
+        display: 'block'
+    }
+
    
     
 
@@ -210,26 +230,45 @@ const DeckEntryDisplay = (props) => {
                                 <a href={props.discord_link} style={{float: 'right'}}>Discord Link</a>
                             </div>
                             <section style={IsColoursContainer}>
-                                <div>
-                                    <label>White</label>
-                                    <input type="checkbox" id="white" checked={isWhite} readOnly={true}/>
-                                </div>
-                                <div>
-                                    <label>Blue</label>
-                                    <input type="checkbox" id="blue" checked={isBlue} readOnly={true}/>
-                                </div>
-                                <div>
-                                    <label>Black</label>
-                                    <input type="checkbox" id="black" checked={isBlack} readOnly={true}/>
-                                </div>
-                                <div>
-                                    <label>Red</label>
-                                    <input type="checkbox" id="red" checked={isRed} readOnly={true}/>
-                                </div>
-                                <div>
-                                    <label>Green</label>
-                                    <input type="checkbox" id="green" checked={isGreen} readOnly={true}/>
-                                </div>
+                                    { isWhite ? (
+                                        <img style={pipStyle} src={white} />
+                                    ) : 
+                                        <img style={pipStyle} src={whiteOff} />
+
+                                    }
+                                    <span/>
+                                    { isBlue ? (
+                                        <img style={pipStyle} src={blue} />
+
+                                    ) : 
+                                        <img style={pipStyle} src={blueOff} />
+                                        
+                                    }
+                                    <span/>
+
+                                    { isBlack ? (
+                                        <img style={pipStyle} src={black} />
+
+                                    ) : 
+                                        <img style={pipStyle} src={blackOff} />
+                                }
+                                    <span/>
+
+                                    { isRed ? (
+                                       <img style={pipStyle} src={red} />
+
+                                    ) : 
+                                        <img style={pipStyle} src={redOff} />
+                                     }
+                                    <span/>
+
+                                    { props.isGreen ? (
+                                         <img style={pipStyle} src={green} />
+
+                                        ) : 
+
+                                        <img style={pipStyle} src={greenOff} />
+                                    }
                             </section>
                             <section style={ImageContainer}>
                                 <div style={ImageBlock}></div>
@@ -278,26 +317,45 @@ const DeckEntryDisplay = (props) => {
                             </div>
                             <section style={IsColoursContainer}>
 
-                                <div>
-                                    <label>White</label>
-                                    <input type="checkbox" id="white" checked={isWhite} readOnly={true}/>
-                                </div>
-                                <div>
-                                    <label>Blue</label>
-                                    <input type="checkbox" id="blue" checked={isBlue} readOnly={true}/>
-                                </div>
-                                <div>
-                                    <label>Black</label>
-                                    <input type="checkbox" id="black" checked={isBlack} readOnly={true}/>
-                                </div>
-                                <div>
-                                    <label>Red</label>
-                                    <input type="checkbox" id="red" checked={isRed} readOnly={true}/>
-                                </div>
-                                <div>
-                                    <label>Green</label>
-                                    <input type="checkbox" id="green" checked={isGreen} readOnly={true}/>
-                                </div>
+                                    { isWhite ? (
+                                        <img style={pipStyle} src={white} />
+                                    ) : 
+                                        <img style={pipStyle} src={whiteOff} />
+
+                                    }
+                                    <span/>
+                                    { isBlue ? (
+                                        <img style={pipStyle} src={blue} />
+
+                                    ) : 
+                                        <img style={pipStyle} src={blueOff} />
+                                        
+                                    }
+                                    <span/>
+
+                                    { isBlack ? (
+                                        <img style={pipStyle} src={black} />
+
+                                    ) : 
+                                        <img style={pipStyle} src={blackOff} />
+                                    }
+                                    <span/>
+
+                                    { isRed ? (
+                                       <img style={pipStyle} src={red} />
+
+                                    ) : 
+                                        <img style={pipStyle} src={redOff} />
+                                     }
+                                    <span/>
+
+                                    { props.isGreen ? (
+                                         <img style={pipStyle} src={green} />
+
+                                        ) : 
+                                        
+                                        <img style={pipStyle} src={greenOff} />
+                                    }
                             </section>
                             <section style={ImageContainer}>
                                 <div style={ImageBlock}></div>

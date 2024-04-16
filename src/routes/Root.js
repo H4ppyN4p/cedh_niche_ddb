@@ -9,6 +9,9 @@ import { useAuthState, } from "react-firebase-hooks/auth";
 import {cssAltThreeArray as cssAltThreeArray    } from "../ColourConsts";
 import Footer from "../elements/Footer";
 
+//image
+import logo from '../images/logo.final1.png'
+
 
 
 const Root = () => {
@@ -31,27 +34,35 @@ const Root = () => {
     return(
         <>
         <nav style={Container}>
-            <h2 style={NavElement}>Logo</h2> 
-            <Link style={NavElement} to={'/'}>Fringe Decks</Link>
-            <Link style={NavElement} to={'/outdateddecks'}>Outdated Decks</Link>
-            <Link style={NavElement} to={'/newdecks'}>New Decks</Link>
-            <Link style={NavElement} to={'/metadecks'}>Meta Decks</Link>
+            <div style={NavStyle}>
+                <Link to={'/'} style={{height: '100%', width: '50px', aspectRatio: '1/1'}}>
+                    <img style={{display: 'block', width: '100%', height: '100%'}} src={logo} />
+                </Link>
 
-              
-            { user ? (
-                    <div style={LoggedInElements}>
-                        <div>///</div>
-                        <Link style={NavElement} to={'/createdecks'}>Create decks</Link>
-                        <Link style={NavElement} to={'/editdecks'}>Edit decks</Link>
-                        <button style={NavElement} onClick={signOutFromFirebase}>Logout</button>
-                    </div>
+                <div style={NavStyleInner}>
+                    <Link style={NavElement} to={'/'}>Fringe Decks</Link>
+                    <Link style={NavElement} to={'/outdateddecks'}>Outdated Decks</Link>
+                    <Link style={NavElement} to={'/newdecks'}>New Decks</Link>
+                    <Link style={NavElement} to={'/metadecks'}>Meta Decks</Link>
+
+                
+                { user ? (
+                        <div style={LoggedInElements}>
+                            <div>///</div>
+                            <Link style={NavElement} to={'/createdecks'}>Create decks</Link>
+                            <Link style={NavElement} to={'/editdecks'}>Edit decks</Link>
+                            <button style={NavElement} onClick={signOutFromFirebase}>Logout</button>
+                        </div>
+                        
+                    ) : (
+                        <>
+                        
+                        </>
+                    )
                     
-                ) : (
-                    <>
-                    
-                    </>
-                )
-            }          
+                }   
+                </div>
+            </div>       
         </nav>
 
         <div style={PaddingElement}></div>
@@ -71,19 +82,33 @@ const Root = () => {
 export default Root;
 
 const Container = {
-    display: 'flex',
-    margin: 0,
-    flexDirection: 'row',
-    backgroundColor: '#D77272',
-    position: 'fixed',
+    backgroundColor: '#352538',
     zIndex: 50,
     width: '100%',
-    alignItems: 'flex-end'
+    position: 'fixed',
+    borderBottom: '2px solid black '
+}
 
+const NavStyle = {
+    width: '50%', 
+    display: 'flex',
+    margin: 'auto',
+    flexDirection: 'row',
+    zIndex: 40,
+    justifyContent: 'space-between',
+}
+
+const NavStyleInner = {
+        display: 'flex',
+        margin: 'auto',
+        flexDirection: 'row',
+        zIndex: 40,
+        justifyContent: 'space-between',
+        alignItems: 'center',
 }
 
 const NavElement = {
-    margin: '0 10px'
+    margin: '0 10px',
 }
 
 const LoggedInElements = {
@@ -93,6 +118,7 @@ const LoggedInElements = {
 }
 
 const Content = {
+    paddingTop: '30px',
     position: 'relative',
     minHeight: '500px',
     backgroundColor: cssAltThreeArray.BgColour
