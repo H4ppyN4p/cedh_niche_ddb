@@ -159,6 +159,21 @@ const DeckEntryDisplayEdit = (props) => {
         }       
     }
 
+
+    ///
+
+    
+        const DeckEntryStyle = {
+            border: '2px solid red'
+        }
+
+        const EditEntryStyle = {
+            border: '2px solid blue',
+            backgroundColor: 'lightblue'
+        }
+
+    ///
+
     return(
         <>
         { isEditing ? (
@@ -451,12 +466,3 @@ const DeckEntryDisplayEdit = (props) => {
 }
 
 export default DeckEntryDisplayEdit
-
-const DeckEntryStyle = {
-    border: '2px solid red'
-}
-
-const EditEntryStyle = {
-    border: '2px solid blue',
-    backgroundColor: 'lightblue'
-}

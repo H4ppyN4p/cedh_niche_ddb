@@ -6,31 +6,6 @@ import { useDatabaseContext } from '../contexts/DatabaseContextProvider'
 //Elements
 import DeckEntry from '../elements/DeckEntryDisplay'
 
-/*
-id
-deck_author
-deck_category
-deck_commander_one
-deck_commander_one_ref
-deck_commander_two
-deck_commander_two_ref
-deck_description
-deck_link
-deck_name
-deck_results
-discord_link
-is_black
-is_blue
-is_colourless
-is_green
-is_red
-is_white
-tag_primary
-tag_one
-tag_two
-tag_three
-tag_four
-*/
 
 const MainDecks = () => {
 
@@ -51,9 +26,17 @@ const MainDecks = () => {
         setDeckToShow(newObjects)
     }, [data])
 
-    
+    ///
 
+    const EntryContainer = {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'flex-start',
+        alignContent: 'space-between'
+    }
 
+    ///
 
     return(
         <>
@@ -96,10 +79,3 @@ const MainDecks = () => {
 
 export default MainDecks;
 
-const EntryContainer = {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'flex-start',
-    alignContent: 'space-between'
-}

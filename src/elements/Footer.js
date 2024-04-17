@@ -1,4 +1,12 @@
 
+///
+
+    const Container = {
+        backgroundColor: '#72D774'
+    }
+
+///
+
 const Footer = () => {
     return(
         <>
@@ -9,6 +17,3 @@ const Footer = () => {
 
 export default Footer;
 
-const Container = {
-    backgroundColor: '#72D774'
-}

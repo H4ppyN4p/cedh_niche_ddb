@@ -12,7 +12,6 @@ import OutdatedDecks from "./routes/OutdatedDecks";
 import SignIn from "./routes/SignIn";
 import CreateDeck from "./routes/CreateDeck";
 import EditDecks from "./routes/EditDecks";
-import UploadCommander from "./routes/UploadCommander";
 
 
 //firebase auth
@@ -22,7 +21,6 @@ import UploadCommander from "./routes/UploadCommander";
 //loader functions
 import {checkAuthCredent} from "./LoaderFunctions"
 import MetaDecks from "./routes/MetaDecks";
-import ColourCheck from "./routes/ColourCheck";
 
 
 
@@ -62,12 +60,7 @@ const r_router = createBrowserRouter([
           path: "editdecks",
           element: <EditDecks />,
           loader: checkAuthCredent
-        },
-        {
-          path: 'colourcheck',
-          element: <ColourCheck />
-        }
-        
+        },     
       
       ]
     }

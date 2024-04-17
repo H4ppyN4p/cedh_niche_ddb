@@ -35,8 +35,3 @@ const SignIn = () => {
 }
 
 export default SignIn;
-
-const Loginform = {
-    position: 'relative',
-    zIndex: 2
-}

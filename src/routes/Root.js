@@ -26,10 +26,56 @@ const Root = () => {
         })
     }
 
-    
-    //console.log(JSON.stringify(database, null, 4))
+    ///     
+        const Container = {
+            backgroundColor: '#352538',
+            zIndex: 50,
+            width: '100%',
+            position: 'fixed',
+            borderBottom: '2px solid black '
+        }
 
-   
+        const NavStyle = {
+            width: '50%', 
+            display: 'flex',
+            margin: 'auto',
+            flexDirection: 'row',
+            zIndex: 40,
+            justifyContent: 'space-between',
+        }
+
+        const NavStyleInner = {
+                display: 'flex',
+                margin: 'auto',
+                flexDirection: 'row',
+                zIndex: 40,
+                justifyContent: 'space-between',
+                alignItems: 'center',
+        }
+
+        const NavElement = {
+            margin: '0 10px',
+        }
+
+        const LoggedInElements = {
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'flex-end'
+        }
+
+        const Content = {
+            paddingTop: '30px',
+            position: 'relative',
+            minHeight: '500px',
+            backgroundColor: cssAltThreeArray.BgColour
+        }
+
+        const PaddingElement = {
+            padding: '20px', 
+            backgroundColor: cssAltThreeArray.BgColour,
+        }
+
+    ///
 
     return(
         <>
@@ -80,53 +126,3 @@ const Root = () => {
 
 
 export default Root;
-
-const Container = {
-    backgroundColor: '#352538',
-    zIndex: 50,
-    width: '100%',
-    position: 'fixed',
-    borderBottom: '2px solid black '
-}
-
-const NavStyle = {
-    width: '50%', 
-    display: 'flex',
-    margin: 'auto',
-    flexDirection: 'row',
-    zIndex: 40,
-    justifyContent: 'space-between',
-}
-
-const NavStyleInner = {
-        display: 'flex',
-        margin: 'auto',
-        flexDirection: 'row',
-        zIndex: 40,
-        justifyContent: 'space-between',
-        alignItems: 'center',
-}
-
-const NavElement = {
-    margin: '0 10px',
-}
-
-const LoggedInElements = {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'flex-end'
-}
-
-const Content = {
-    paddingTop: '30px',
-    position: 'relative',
-    minHeight: '500px',
-    backgroundColor: cssAltThreeArray.BgColour
-}
-
-const PaddingElement = {
-    padding: '20px', 
-    backgroundColor: cssAltThreeArray.BgColour,
-}
-
-

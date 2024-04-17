@@ -68,147 +68,148 @@ const DeckEntryDisplay = (props) => {
         setImageBottomTwo('0')
     }
 
+    ///
 
-    const DeckEntry = {
-        minHeight: '410px',
-        width: '320px',
-        margin: '20px 40px',
-        position: 'relative',
-    }
-    
-    const DeckEntryHeader = {
-        backgroundColor: cssAltThreeArray.headerColour,
-        left: '6%',
-        width: '92%',
-        margin: 'auto',
-        position: 'absolute',
-        paddingBottom: '50px',
-        color: 'lightgray',
-        border: `3px solid ${cssAltThreeArray.headerBorder}`,
-        borderRadius: cssAltThreeArray.entryBorderRadius,
-        boxShadow: '4px 4px 4px rgb(0 0 0 / 0.2)'
-    
-    }
-    
-    const DeckEntryHeaderText = {
-        marginLeft: '5px'
-    }
-    
-    const DeckEntryContainer = {
-        top: '44px',
-        width: '80%',
-        paddingTop: '10px',
-        margin: 'auto',
-        backgroundColor: cssAltThreeArray.entryColour,
-        height: '100%',
-        position: 'relative',
-        border: `3px solid ${cssAltThreeArray.entryBorder}`,
-        borderRadius: cssAltThreeArray.entryBorderRadius,
-        boxShadow: '10px 10px 5px rgb(60 20 20 / 0.2)'
-    }
-    
-    const DeckEntryContainerText = {
-        paddingLeft: '2px'
-    }
-    
-    const IsColoursContainer = {
-        display: 'flex',
-        flexDirection: 'col',
-        justifyContent: 'space-around',
-        width: '70%',
-        margin: 'auto'
-    }
-    
-    const ImageContainer = {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center'
-    }
-    
-    const ImageHolder = {
-        height: imageHeight,
-        position: imagePosition,
-        zIndex: imageZIndex,
-        bottom: imageBottom,
-        aspectRatio: '1 / 1.4',
-        margin: '5px',
-    }
-
-    const ImageHolderTwo = {
-        height: imageHeightTwo,
-        position: imagePositionTwo,
-        zIndex: imageZIndexTwo,
-        bottom: imageBottomTwo,
-        aspectRatio: '1 / 1.4',
-        margin: '5px',
-    }
-    
-    const ImageBlock = {
-        height: imageBlockHeight
-    }
-    
-    const ImageObject = {
-        display: 'block',
-        width: '100%',
-        height: '100%',
-        borderRadius: '7px',
-        boxShadow: '4px 4px 2px rgb(0 0 0 / 0.2)',
+        const DeckEntry = {
+            minHeight: '410px',
+            width: '320px',
+            margin: '20px 40px',
+            position: 'relative',
+        }
         
-    }
-    
-    const TagPrimary = {
-        width: '80%',
-        backgroundColor: cssAltThreeArray.tagArchetypeColour,
-        textAlign: 'center',
-        margin: '2px auto',
-        border: `2px solid ${cssAltThreeArray.tagsBorder}`,
-        borderRadius: '6px',
-        boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
-    
-    }
-    
-    const TagResult = {
-        width: '80%',
-        backgroundColor: cssAltThreeArray.tagResultColour,
-        textAlign: 'center',
-        margin: '2px auto',
-        border: `2px solid ${cssAltThreeArray.tagsBorder}`,
-        borderRadius: '6px',
-        boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
-    
-    
-    }
-    
-    const TagContainer = {
-        display: 'flex',
-        flexDirection: 'col',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        minHeight: '45px',
-        marginBottom: '5px',
-    
-    }
-    
-    const TagHolder = {
-        width: '40%',
-        margin: '2px',
-        backgroundColor: cssAltThreeArray.tagStrategiesColour,
-        height: '20px',
-        border: `2px solid ${cssAltThreeArray.tagsBorder}`,
-        textAlign: 'center',
-        borderRadius: '6px',
-        boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
-    
-    
-    }
+        const DeckEntryHeader = {
+            backgroundColor: cssAltThreeArray.headerColour,
+            left: '6%',
+            width: '92%',
+            margin: 'auto',
+            position: 'absolute',
+            paddingBottom: '50px',
+            color: 'lightgray',
+            border: `3px solid ${cssAltThreeArray.headerBorder}`,
+            borderRadius: cssAltThreeArray.entryBorderRadius,
+            boxShadow: '4px 4px 4px rgb(0 0 0 / 0.2)'
+        
+        }
+        
+        const DeckEntryHeaderText = {
+            marginLeft: '5px'
+        }
+        
+        const DeckEntryContainer = {
+            top: '44px',
+            width: '80%',
+            paddingTop: '10px',
+            margin: 'auto',
+            backgroundColor: cssAltThreeArray.entryColour,
+            height: '100%',
+            position: 'relative',
+            border: `3px solid ${cssAltThreeArray.entryBorder}`,
+            borderRadius: cssAltThreeArray.entryBorderRadius,
+            boxShadow: '10px 10px 5px rgb(60 20 20 / 0.2)'
+        }
+        
+        const DeckEntryContainerText = {
+            paddingLeft: '2px'
+        }
+        
+        const IsColoursContainer = {
+            display: 'flex',
+            flexDirection: 'col',
+            justifyContent: 'space-around',
+            width: '70%',
+            margin: 'auto'
+        }
+        
+        const ImageContainer = {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center'
+        }
+        
+        const ImageHolder = {
+            height: imageHeight,
+            position: imagePosition,
+            zIndex: imageZIndex,
+            bottom: imageBottom,
+            aspectRatio: '1 / 1.4',
+            margin: '5px',
+        }
 
-    const pipStyle = {
-        width: '20px',
-        aspectRatio: '1/1',
-        display: 'block'
-    }
+        const ImageHolderTwo = {
+            height: imageHeightTwo,
+            position: imagePositionTwo,
+            zIndex: imageZIndexTwo,
+            bottom: imageBottomTwo,
+            aspectRatio: '1 / 1.4',
+            margin: '5px',
+        }
+        
+        const ImageBlock = {
+            height: imageBlockHeight
+        }
+        
+        const ImageObject = {
+            display: 'block',
+            width: '100%',
+            height: '100%',
+            borderRadius: '7px',
+            boxShadow: '4px 4px 2px rgb(0 0 0 / 0.2)',
+            
+        }
+        
+        const TagPrimary = {
+            width: '80%',
+            backgroundColor: cssAltThreeArray.tagArchetypeColour,
+            textAlign: 'center',
+            margin: '2px auto',
+            border: `2px solid ${cssAltThreeArray.tagsBorder}`,
+            borderRadius: '6px',
+            boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
+        
+        }
+        
+        const TagResult = {
+            width: '80%',
+            backgroundColor: cssAltThreeArray.tagResultColour,
+            textAlign: 'center',
+            margin: '2px auto',
+            border: `2px solid ${cssAltThreeArray.tagsBorder}`,
+            borderRadius: '6px',
+            boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
+        
+        
+        }
+        
+        const TagContainer = {
+            display: 'flex',
+            flexDirection: 'col',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            minHeight: '45px',
+            marginBottom: '5px',
+        
+        }
+        
+        const TagHolder = {
+            width: '40%',
+            margin: '2px',
+            backgroundColor: cssAltThreeArray.tagStrategiesColour,
+            height: '20px',
+            border: `2px solid ${cssAltThreeArray.tagsBorder}`,
+            textAlign: 'center',
+            borderRadius: '6px',
+            boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
+        
+        
+        }
 
-   
+        const pipStyle = {
+            width: '20px',
+            aspectRatio: '1/1',
+            display: 'block'
+        }
+
+    ///
     
 
     return(
