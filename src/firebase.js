@@ -7,6 +7,8 @@ import { getStorage } from "firebase/storage"
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+//Old config:
+/*
 const firebaseConfig = {
   apiKey: "AIzaSyBsNmPA8yFDXjzFfHZWEwH-ncVGzNlZjDs",
   authDomain: "brewers-base-db.firebaseapp.com",
@@ -15,6 +17,19 @@ const firebaseConfig = {
   messagingSenderId: "255314939777",
   appId: "1:255314939777:web:bea82f5d7184867dae6280"
 };
+*/
+
+//New Config:
+const firebaseConfig = {
+  apiKey: "AIzaSyAwTm6UTyJQzG8_7b3YygOYw-z-hm66geA",
+  authDomain: "cedh-fringe-ddb.firebaseapp.com",
+  projectId: "cedh-fringe-ddb",
+  storageBucket: "cedh-fringe-ddb.appspot.com",
+  messagingSenderId: "782177591979",
+  appId: "1:782177591979:web:ef36373a9322e3613acdee",
+  measurementId: "G-RK4DHMW971"
+};
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

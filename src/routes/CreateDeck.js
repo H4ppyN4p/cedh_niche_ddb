@@ -42,27 +42,27 @@ const CreateDeck = () => {
 
 
     const handleColourless = () => {
-      setIsColourless(!isColourless);
+        setIsColourless(!isColourless);
     }
 
     const handleWhite = () => {
-      setIsWhite(!isWhite);
+        setIsWhite(!isWhite);
     }
 
     const handleBlue = () => {
-      setIsBlue(!isBlue);
+        setIsBlue(!isBlue);
     }
 
     const handleBlack = () => {
-      setIsBlack(!isBlack);
+        setIsBlack(!isBlack);
     }
 
     const handleRed = () => {
-      setIsRed(!isRed);
+        setIsRed(!isRed);
     }
 
     const handleGreen = () => {
-      setIsGreen(!isGreen);
+        setIsGreen(!isGreen);
     }
 
  
@@ -203,6 +203,10 @@ const CreateDeck = () => {
         flexDirection: 'column'
     }
 
+    const colourChoiceBorder = {
+        border: '2px solid red'
+    }
+
     ///  
 
     return (
@@ -255,7 +259,7 @@ const CreateDeck = () => {
                 </div>
 
 
-                <div style={{border: '2px solid red'}}>
+                <div style={colourChoiceBorder}>
                     <p>Choose colours for the deck:</p>
                     <div>
                         <label>Colourless</label>

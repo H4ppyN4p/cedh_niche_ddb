@@ -23,6 +23,8 @@ const EditDecks = () => {
                         deck_category={e.deck_category}
                         deck_commander_one={e.deck_commander_one}
                         deck_commander_two={e.deck_commander_two}
+                        deck_commander_one_ref={e.deck_commander_one_ref}
+                        deck_commander_two_ref={e.deck_commander_two_ref}
                         deck_description={e.deck_description}
                         deck_link={e.deck_link} 
                         deck_name={e.deck_name}

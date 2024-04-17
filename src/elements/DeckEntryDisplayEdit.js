@@ -1,5 +1,6 @@
-import { deleteDoc, updateDoc, doc } from 'firebase/firestore';
-import { database } from '../firebase';
+import { deleteDoc, updateDoc, doc, } from 'firebase/firestore';
+import { database, image} from '../firebase';
+import { ref, deleteObject} from 'firebase/storage'
 import { useState} from 'react';
 
 //context
@@ -61,43 +62,63 @@ const DeckEntryDisplayEdit = (props) => {
         setIsGreen(!isGreen);
       }
 
-      /*
-       'deck name: ' +  deckName,
-           '   deck author: ' + deckAuthor,
-           '   commander one: ' + commanderOne,
-           '    commander two: ' + commanderTwo,
-           '    deck description; ' + deckDescription,
-            '   deck link: ' + deckLink,
-            '    discord link: ' + discordLink,
-             '    top: ' + top16,
-           '    category: ' +  category,
-            '   colourless ' + isColourless,
-            '   white ' +isWhite,
-            '   blue '+isBlue,
-            '   black '+isBlack,
-           '   red '+isRed,
-           '   green '+ isGreen,
-            '   primary '+ tagPrimary,
-            '   1 '+ tag1,
-            '   2 ' +tag2,
-            '   3 '+ tag3,
-            '   4 '+ tag4, 
-      */
 
     function setToEditMode(){
         setIsEditing(!isEditing)
     }
 
-    async function deleteDeck(){
+    
+    async function deleteImages(){
         if (window.confirm('Are you sure you want to delete this deck?')) {
+            if (commanderTwo !== undefined) {
+
+                const imageOneToDelete = ref(image, `${props.deck_commander_one_ref}`)
+                const imageTwoToDelete = ref(image, `${props.deck_commander_two_ref}`)
+
+                deleteObject(imageOneToDelete).then(() => {
+                    console.log('image one deleted successfully')
+                }).catch((error) => {
+                    console.log(error + ' a mistake happened with deleting imageOne')
+                })
+
+                deleteObject(imageTwoToDelete).then(() => {
+                    console.log('image two deleted successfully')
+                }).catch((error) => {
+                    console.log(error + ' a mistake happened with deleting imageTwo')
+
+                })
+
+                deleteDeck()
+
+            } else {
+                
+                const imageOneToDelete = ref(image, `${props.deck_commander_one_ref}`)
+
+                deleteObject(imageOneToDelete).then(() => {
+                    console.log('image one deleted successfully')
+
+                }).catch((error) => {
+                    console.log(error + ' a mistake happened with deleting imageOne')
+                })
+
+                deleteDeck()
+
+            }
+
+        }
+    }
+
+
+    async function deleteDeck(){
             try {
+
+
               await deleteDoc(doc(database, 'decklists', props.deck_id))
               updateContext(true)
             } catch(error) {
                 console.log(error)
             }
         }   
-    }
 
     async function updateDeck(){
         if (window.confirm('Are you sure you want to save this edit?')) {
@@ -161,7 +182,6 @@ const DeckEntryDisplayEdit = (props) => {
 
 
     ///
-
     
         const DeckEntryStyle = {
             border: '2px solid red'
@@ -402,7 +422,7 @@ const DeckEntryDisplayEdit = (props) => {
                                     <p>{props.tag_four}</p>
                                 </div>
                             </li>
-                            <button onClick={deleteDeck}>Delete</button>
+                            <button onClick={deleteImages}>Delete</button>
                             <button onClick={setToEditMode}>Edit</button>
                         </ul>
                     </>
@@ -452,7 +472,7 @@ const DeckEntryDisplayEdit = (props) => {
                                     <p>{props.tag_four}</p>
                                 </div>
                             </li>
-                            <button onClick={deleteDeck}>Delete</button>
+                            <button onClick={deleteImages}>Delete</button>
                             <button onClick={setToEditMode}>Edit</button>
                         </ul>
                     </>
