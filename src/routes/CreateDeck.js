@@ -218,7 +218,7 @@ const CreateDeck = () => {
                     <select name="Deck Colour" id="DeckColour" value={category} onChange={e => setCategory(e.target.value)}>
                     <option value="Fringe">Fringe</option>
                     <option value="Meta">Meta</option>
-                    <option value="New Commander">Winner</option>
+                    <option value="NewCommander">New Commander</option>
                     </select>
                 </div>
 

@@ -205,13 +205,14 @@ const DeckEntryDisplayEdit = (props) => {
                         <select name="Deck Colour" id="DeckColour" value={category} onChange={e => setCategory(e.target.value)}>
                         <option value="Fringe">Fringe</option>
                         <option value="Meta">Meta</option>
-                        <option value="New Commander">Winner</option>
+                        <option value="NewCommander">New Commander</option>
+                        <option value="Outdated">Outdated</option>
                         </select>
                     </div>
 
                     <div>
                         <label htmlFor='DeckName'>Deck Name: </label>
-                        <input type="text" name="DeckNName" value={deckName} onInput={e => setDeckName(e.target.value)}/>
+                        <input type="text" name="DeckName" value={deckName} onInput={e => setDeckName(e.target.value)}/>
                     </div>
 
                     <div>

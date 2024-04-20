@@ -5,6 +5,9 @@ import { useDatabaseContext } from '../contexts/DatabaseContextProvider'
 
 //Elements
 import DeckEntry from '../elements/DeckEntryDisplay'
+import { Link } from 'react-router-dom'
+import NewDecks from './NewDecks'
+import { cssAltThreeArray } from '../ColourConsts'
 
 
 const MainDecks = () => {
@@ -28,6 +31,16 @@ const MainDecks = () => {
 
     ///
 
+    const ExplainSection = {
+        width: '80%', 
+        margin: 'auto',
+        height: '40px',
+        backgroundColor: cssAltThreeArray.entryColour,
+        textAlign: 'center',
+        lineHeight: '40px'
+    }
+
+
     const EntryContainer = {
         display: 'flex',
         flexDirection: 'row',
@@ -41,8 +54,14 @@ const MainDecks = () => {
     return(
         <>
             <div style={EntryContainer}>
+
+                <div style={ExplainSection}>
+                    <p>This is the main-page for decks; for new commanders released within the last set, see <Link to={NewDecks}>New Decks</Link></p>
+                </div>
+
                 {decksToShow && decksToShow.map((e) => {
                     return (
+
                         <DeckEntry
                         key={e.id}
                         id={e.id}
