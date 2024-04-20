@@ -36,12 +36,11 @@ const Root = () => {
         }
 
         const NavStyle = {
-            width: '50%', 
+            width: '60%', 
             display: 'flex',
             margin: 'auto',
             flexDirection: 'row',
             zIndex: 40,
-            justifyContent: 'space-between',
         }
 
         const NavStyleInner = {
@@ -81,8 +80,8 @@ const Root = () => {
         <>
         <nav style={Container}>
             <div style={NavStyle}>
-                <Link to={'/'} style={{height: '100%', width: '50px', aspectRatio: '1/1'}}>
-                    <img style={{display: 'block', width: '100%', height: '100%'}} src={logo} />
+                <Link to={'/'} style={{ width: '50px', aspectRatio: '1/1'}}>
+                    <img alt="Logo" style={{display: 'block', width: '100%', height: '100%'}} src={logo} />
                 </Link>
 
                 <div style={NavStyleInner}>
@@ -90,6 +89,7 @@ const Root = () => {
                     <Link style={NavElement} to={'/outdateddecks'}>Outdated Decks</Link>
                     <Link style={NavElement} to={'/newdecks'}>New Decks</Link>
                     <Link style={NavElement} to={'/metadecks'}>Meta Decks</Link>
+                    <a style={NavElement} href="https://discord.gg/upE7RXM3rp" >Submit a Deck</a>
 
                 
                 { user ? (
