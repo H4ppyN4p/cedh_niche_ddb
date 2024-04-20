@@ -42,17 +42,18 @@ const cssAltTwoArray = {
 }
 
 const cssAltThreeArray = {
+    headerColour: '#352538',
     BgColour: '#3c4142',
     headerColour: '#49283e',
-    headerBorder: '#1b0236',
+    headerBorder: '#352538',
     headerBorderRadius: '7px',
     entryColour: '#233750',
-    entryBorder: '#1b0236',
+    entryBorder: '#352538',
     entryBorderRadius: '7px',
     tagArchetypeColour: '#3c4142',
     tagResultColour: '#899ab5',
     tagStrategiesColour: '#ab65f8',
-    tagsBorder: '#320465',
+    tagsBorder: '#352538',
 }
 
 

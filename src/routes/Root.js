@@ -6,7 +6,7 @@ import { useAuthState, } from "react-firebase-hooks/auth";
 
 //Firebase
 
-import {cssAltThreeArray as cssAltThreeArray    } from "../ColourConsts";
+import {cssAltThreeArray } from "../ColourConsts";
 import Footer from "../elements/Footer";
 
 //image
