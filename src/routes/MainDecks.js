@@ -31,22 +31,22 @@ const MainDecks = () => {
 
     ///
 
-    const ExplainSection = {
-        width: '80%', 
-        margin: 'auto',
-        height: '40px',
-        backgroundColor: cssAltThreeArray.entryColour,
-        textAlign: 'center',
-        lineHeight: '40px'
-    }
-
 
     const EntryContainer = {
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'flex-start',
-        alignContent: 'space-between'
+        alignContent: 'space-between',
+    }
+
+    const ExplainSection = {
+        width: '80%', 
+        margin: 'auto',
+        minHeight: '40px',
+        backgroundColor: cssAltThreeArray.entryColour,
+        textAlign: 'center',
+        color: 'lightgray'
     }
 
     ///
@@ -56,7 +56,7 @@ const MainDecks = () => {
             <div style={EntryContainer}>
 
                 <div style={ExplainSection}>
-                    <p>This is the main-page for decks; for new commanders released within the last set, see <Link to={NewDecks}>New Decks</Link></p>
+                    <p>This is the main-page for decks; for new commanders released within the last set, see <Link style={{color: 'lightgray'}} to={NewDecks}>New Decks</Link></p>
                 </div>
 
                 {decksToShow && decksToShow.map((e) => {

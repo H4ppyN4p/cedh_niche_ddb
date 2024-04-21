@@ -50,10 +50,12 @@ const Root = () => {
                 zIndex: 40,
                 justifyContent: 'space-between',
                 alignItems: 'center',
+                color: 'gray'
         }
 
         const NavElement = {
             margin: '0 10px',
+            color: 'lightgray'
         }
 
         const LoggedInElements = {
@@ -65,7 +67,7 @@ const Root = () => {
         const Content = {
             paddingTop: '30px',
             position: 'relative',
-            minHeight: '500px',
+            minHeight: '1000px',
             backgroundColor: cssAltThreeArray.BgColour
         }
 
@@ -97,7 +99,7 @@ const Root = () => {
                             <div>///</div>
                             <Link style={NavElement} to={'/createdecks'}>Create decks</Link>
                             <Link style={NavElement} to={'/editdecks'}>Edit decks</Link>
-                            <button style={NavElement} onClick={signOutFromFirebase}>Logout</button>
+                            <button onClick={signOutFromFirebase}>Logout</button>
                         </div>
                         
                     ) : (

@@ -30,6 +30,7 @@ const DeckEntrySingleCommander = (props) => {
     const [imageBlockHeight, setImageBlockHeight] = useState('0') 
     const [imageZIndex, setImageZIndex] = useState()
     const [imageBottom, setImageBottom] = useState('0')
+    const [imageRadius, setImageRadius] = useState('7px')
 
 
     
@@ -39,6 +40,7 @@ const DeckEntrySingleCommander = (props) => {
         setImageBlockHeight('210px')
         setImageZIndex(2)
         setImageBottom('70')
+        setImageRadius('15px')
     }
 
     function onImageHoverLeave(){
@@ -47,6 +49,8 @@ const DeckEntrySingleCommander = (props) => {
         setImageBlockHeight('0')
         setImageZIndex()
         setImageBottom('0')
+        setImageRadius('7px')
+
     }
 
    
@@ -141,8 +145,9 @@ const DeckEntrySingleCommander = (props) => {
         display: 'block',
         width: '100%',
         height: '100%',
-        borderRadius: '7px',
+        borderRadius: imageRadius,
         boxShadow: '4px 4px 2px rgb(0 0 0 / 0.2)',
+
         
     }
 

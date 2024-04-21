@@ -32,10 +32,10 @@ const OutdatedDecks = () => {
     const ExplainSection = {
         width: '80%', 
         margin: 'auto',
-        height: '40px',
+        minHeight: '40px',
         backgroundColor: cssAltThreeArray.entryColour,
         textAlign: 'center',
-        lineHeight: '40px'
+        color: 'lightgray'
     }
 
     const EntryContainer = {

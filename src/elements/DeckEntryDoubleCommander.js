@@ -30,11 +30,15 @@ const DeckEntryDoubleCommander = (props) => {
     const [imageBlockHeight, setImageBlockHeight] = useState('0') 
     const [imageZIndex, setImageZIndex] = useState()
     const [imageBottom, setImageBottom] = useState('0')
+    const [imageRadius, setImageRadius] = useState('7px')
+
 
     const [imageHeightTwo, setImageHeightTwo] = useState('200px')
     const [imagePositionTwo, setImagePositionTwo] = useState('relative')
     const [imageZIndexTwo, setImageZIndexTwo] = useState()
     const [imageBottomTwo, setImageBottomTwo] = useState('0')
+    const [imageRadiusTwo, setImageRadiusTwo] = useState('7px')
+
     
     function onImageHover(){
         setImageHeight('383px')
@@ -42,6 +46,7 @@ const DeckEntryDoubleCommander = (props) => {
         setImageBlockHeight('210px')
         setImageZIndex(2)
         setImageBottom('70')
+        setImageRadius('15px')
     }
 
     function onImageHoverLeave(){
@@ -50,6 +55,7 @@ const DeckEntryDoubleCommander = (props) => {
         setImageBlockHeight('0')
         setImageZIndex()
         setImageBottom('0')
+        setImageRadius('7px')
     }
 
     function onImageTwoHover(){
@@ -58,6 +64,8 @@ const DeckEntryDoubleCommander = (props) => {
         setImageBlockHeight('210px')
         setImageZIndexTwo(2)
         setImageBottomTwo('70')
+        setImageRadiusTwo('15px')
+
     }
 
     function onImageTwoHoverLeave(){
@@ -66,6 +74,8 @@ const DeckEntryDoubleCommander = (props) => {
         setImageBlockHeight('0')
         setImageZIndexTwo(0)
         setImageBottomTwo('0')
+        setImageRadiusTwo('7px')
+
     }
 
  ///
@@ -167,9 +177,16 @@ const DeckEntryDoubleCommander = (props) => {
         display: 'block',
         width: '100%',
         height: '100%',
-        borderRadius: '7px',
-        boxShadow: '4px 4px 2px rgb(0 0 0 / 0.2)',
-        
+        borderRadius: imageRadius,
+        boxShadow: '4px 4px 2px rgb(0 0 0 / 0.2)',   
+    }
+
+    const ImageObjectTwo = {
+        display: 'block',
+        width: '100%',
+        height: '100%',
+        borderRadius: imageRadiusTwo,
+        boxShadow: '4px 4px 2px rgb(0 0 0 / 0.2)',   
     }
 
     const TagPrimary = {
@@ -298,7 +315,7 @@ const DeckEntryDoubleCommander = (props) => {
                         onMouseEnter={() => onImageTwoHover()} 
                         onMouseLeave={() => onImageTwoHoverLeave()}
                         style={ImageHolderTwo}>
-                            <img style={ImageObject} alt={props.deck_commander_two} src={props.deck_commander_two_ref}/>
+                            <img style={ImageObjectTwo} alt={props.deck_commander_two} src={props.deck_commander_two_ref}/>
                         </div>
                     </section>
                     <div style={TagPrimary}>{props.tag_primary}</div>
