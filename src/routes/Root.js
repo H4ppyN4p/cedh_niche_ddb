@@ -6,7 +6,7 @@ import { useAuthState, } from "react-firebase-hooks/auth";
 
 //Firebase
 
-import {cssAltThreeArray } from "../ColourConsts";
+import {cssDarkArray } from "../ColourConsts";
 import Footer from "../elements/Footer";
 
 //image
@@ -68,12 +68,12 @@ const Root = () => {
             paddingTop: '30px',
             position: 'relative',
             minHeight: '1000px',
-            backgroundColor: cssAltThreeArray.BgColour
+            backgroundColor: cssDarkArray.BgColour
         }
 
         const PaddingElement = {
             padding: '20px', 
-            backgroundColor: cssAltThreeArray.BgColour,
+            backgroundColor: cssDarkArray.BgColour,
         }
 
     ///

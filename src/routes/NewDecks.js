@@ -5,7 +5,7 @@ import { useDatabaseContext } from '../contexts/DatabaseContextProvider'
 
 //Elements
 import DeckEntry from '../elements/DeckEntryDisplay'
-import { cssAltThreeArray } from '../ColourConsts'
+import { cssDarkArray } from '../ColourConsts'
 
 
 const NewDecks = () => {
@@ -33,7 +33,7 @@ const NewDecks = () => {
         width: '80%', 
         margin: 'auto',
         minHeight: '40px',
-        backgroundColor: cssAltThreeArray.entryColour,
+        backgroundColor: cssDarkArray.entryColour,
         textAlign: 'center',
         color: 'lightgray'
     }

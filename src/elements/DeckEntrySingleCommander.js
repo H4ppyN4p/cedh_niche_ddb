@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import { cssAltThreeArray } from "../ColourConsts"
+import { cssDarkArray } from "../ColourConsts"
 
 import black from "../images/symbolBlack.png"
 import red from "../images/symbolRed.png"
@@ -14,6 +14,7 @@ import blueOff from "../images/symbolBlueOff.png"
 import whiteOff from "../images/symbolWhiteOff.png"
 
 import discordLogo from "../images/Discord-Logo-PNG-Photo.png"
+import links from "../images/hyperlink-icon.png"
 
 
 
@@ -65,33 +66,36 @@ const DeckEntrySingleCommander = (props) => {
     }
 
     const DeckEntryHeader = {
-        backgroundColor: cssAltThreeArray.headerColour,
+        backgroundColor: cssDarkArray.headerColour,
         left: '6%',
-        width: '92%',
+        width: '87%',
         margin: 'auto',
         position: 'absolute',
         paddingBottom: '50px',
         color: 'lightgray',
-        border: `3px solid ${cssAltThreeArray.headerBorder}`,
-        borderRadius: cssAltThreeArray.entryBorderRadius,
+        border: `3px solid ${cssDarkArray.headerBorder}`,
+        borderRadius: cssDarkArray.entryBorderRadius,
         boxShadow: '4px 4px 4px rgb(0 0 0 / 0.2)'
 
     }
 
     const DeckEntryHeaderText = {
-        marginLeft: '5px'
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 
     const DeckEntryContainer = {
-        top: '44px',
-        width: '80%',
-        paddingTop: '10px',
+        top: '67px',
+        width: '74%',
+        paddingTop: '7px',
         margin: 'auto',
-        backgroundColor: cssAltThreeArray.entryColour,
-        height: '100%',
+        backgroundColor: cssDarkArray.entryColour,
+        height: '354px',
         position: 'relative',
-        border: `3px solid ${cssAltThreeArray.entryBorder}`,
-        borderRadius: cssAltThreeArray.entryBorderRadius,
+        border: `3px solid ${cssDarkArray.entryBorder}`,
+        borderRadius: cssDarkArray.entryBorderRadius,
         boxShadow: '10px 10px 5px rgb(60 20 20 / 0.2)'
     }
 
@@ -108,6 +112,13 @@ const DeckEntrySingleCommander = (props) => {
         aspectRatio: '1/0.6', 
         display: 'block', 
         float: 'right'
+    }
+
+    const LinkImage = {
+        width: '40px', 
+        aspectRatio: '1/0.85', 
+        display: 'block', 
+        float: 'left'
     }
 
     const DeckEntryContainerText = {
@@ -152,22 +163,22 @@ const DeckEntrySingleCommander = (props) => {
     }
 
     const TagPrimary = {
-        width: '80%',
-        backgroundColor: cssAltThreeArray.tagArchetypeColour,
+        width: '90%',
+        backgroundColor: cssDarkArray.tagArchetypeColour,
         textAlign: 'center',
         margin: '2px auto',
-        border: `2px solid ${cssAltThreeArray.tagsBorder}`,
+        border: `2px solid ${cssDarkArray.tagsBorder}`,
         borderRadius: '6px',
         boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
 
     }
 
     const TagResult = {
-        width: '80%',
-        backgroundColor: cssAltThreeArray.tagResultColour,
+        width: '90%',
+        backgroundColor: cssDarkArray.tagResultColour,
         textAlign: 'center',
         margin: '2px auto',
-        border: `2px solid ${cssAltThreeArray.tagsBorder}`,
+        border: `2px solid ${cssDarkArray.tagsBorder}`,
         borderRadius: '6px',
         boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
 
@@ -185,11 +196,11 @@ const DeckEntrySingleCommander = (props) => {
     }
 
     const TagHolder = {
-        width: '40%',
+        width: '45%',
         margin: '2px',
-        backgroundColor: cssAltThreeArray.tagStrategiesColour,
+        backgroundColor: cssDarkArray.tagStrategiesColour,
         height: '20px',
-        border: `2px solid ${cssAltThreeArray.tagsBorder}`,
+        border: `2px solid ${cssDarkArray.tagsBorder}`,
         textAlign: 'center',
         borderRadius: '6px',
         boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
@@ -200,7 +211,11 @@ const DeckEntrySingleCommander = (props) => {
     const pipStyle = {
         width: '20px',
         aspectRatio: '1/1',
-        display: 'block'
+        display: 'block',
+        marginTop: '1px',
+        boxShadow: '2px 2px 2px rgb(0 0 0 / 0.95)',
+        borderRadius: '10px'
+
     }
 
 ///
@@ -211,60 +226,55 @@ const DeckEntrySingleCommander = (props) => {
                     <section style={DeckEntryHeader}>
                         <div style={DeckEntryHeaderText}>
                             <h3>{props.deck_name}</h3>
-                            <p>By: {props.deck_author}</p>
                         </div>
-                    </section>
-                    <section style={DeckEntryContainer}>
-                        <div style={DeckEntryContainerText}>
-                            <section style={LinkSection}>
-                                <a href={props.deck_link}>Deck link</a>
-                                
-                                <a href={props.discord_link} style={DiscordLink}>
-                                    <img style={DiscordImage} src={discordLogo} />
-                                </a>
-                            </section>
-                            <section style={IsColoursContainer}>
+                        <p>By: {props.deck_author}</p>
+                        <section style={IsColoursContainer}>
 
                                     { isWhite ? (
-                                        <img style={pipStyle} src={white} />
+                                        <img alt="white pip" style={pipStyle} src={white} />
                                     ) : 
-                                        <img style={pipStyle} src={whiteOff} />
+                                        <img alt="white pip off" style={pipStyle} src={whiteOff} />
 
                                     }
                                     <span/>
                                     { isBlue ? (
-                                        <img style={pipStyle} src={blue} />
+                                        <img alt="blue pip" style={pipStyle} src={blue} />
 
                                     ) : 
-                                        <img style={pipStyle} src={blueOff} />
+                                        <img alt="blue pip off" style={pipStyle} src={blueOff} />
                                         
                                     }
                                     <span/>
 
                                     { isBlack ? (
-                                        <img style={pipStyle} src={black} />
+                                        <img alt="black pip" style={pipStyle} src={black} />
 
                                     ) : 
-                                        <img style={pipStyle} src={blackOff} />
+                                        <img alt="black pip off" style={pipStyle} src={blackOff} />
                                     }
                                     <span/>
 
                                     { isRed ? (
-                                       <img style={pipStyle} src={red} />
+                                       <img alt="red pip" style={pipStyle} src={red} />
 
                                     ) : 
-                                        <img style={pipStyle} src={redOff} />
+                                        <img alt="red pip off" style={pipStyle} src={redOff} />
                                      }
                                     <span/>
 
-                                    { props.isGreen ? (
-                                         <img style={pipStyle} src={green} />
+                                    { isGreen ? (
+                                         <img alt="green pip" style={pipStyle} src={green} />
 
                                         ) : 
                                         
-                                        <img style={pipStyle} src={greenOff} />
+                                        <img alt="green pip off" style={pipStyle} src={greenOff} />
                                     }
-                            </section>
+                        </section>
+                    </section>
+                    <section style={DeckEntryContainer}>
+                        <div style={DeckEntryContainerText}>
+                           
+                            
                             <section style={ImageContainer}>
                                 <div style={ImageBlock}></div>
 
@@ -282,6 +292,15 @@ const DeckEntrySingleCommander = (props) => {
                                 <div style={TagHolder}>{props.tag_two}</div>
                                 <div style={TagHolder}>{props.tag_three}</div>
                                 <div style={TagHolder}>{props.tag_four}</div>
+                            </section>
+                            <section style={LinkSection}>
+                                <a href={props.deck_link}>
+                                    <img alt="link to decklist" style={LinkImage} src={links} />
+                                </a>
+                                
+                                <a href={props.discord_link} style={DiscordLink}>
+                                    <img alt="link to discord server" style={DiscordImage} src={discordLogo} />
+                                </a>
                             </section>
                         </div>
                     </section>
