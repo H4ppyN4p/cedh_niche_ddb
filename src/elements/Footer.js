@@ -1,4 +1,5 @@
 import { cssLightArray } from "../ColourConsts";
+import { Link } from "react-router-dom";
 
 ///
 
@@ -27,6 +28,8 @@ const Footer = () => {
             <p style={TextStyle}> --- For personal inquiries, contact me at mail: tobi5703@gmail.com ---</p>
             <p style={TextStyle}> --- Inquiries about the website can be send to mail at: cedhbrewhouse@gmail.com ---</p>
             <p style={TextStyle}> --- Logo and deck-entry design(s) by CJ Doloro ---</p>
+            <p style={TextStyle}> --- <Link to={'/signin'}>Login</Link> ---</p>
+
 
         </footer>
         </>
