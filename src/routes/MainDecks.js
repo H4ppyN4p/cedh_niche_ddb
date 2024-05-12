@@ -7,7 +7,7 @@ import { useDatabaseContext } from '../contexts/DatabaseContextProvider'
 import DeckEntry from '../elements/DeckEntryDisplay'
 import { Link } from 'react-router-dom'
 import NewDecks from './NewDecks'
-import { cssDarkArray } from '../ColourConsts'
+import { cssLightArray } from '../ColourConsts'
 
 
 const MainDecks = () => {
@@ -44,7 +44,7 @@ const MainDecks = () => {
         width: '80%', 
         margin: 'auto',
         minHeight: '40px',
-        backgroundColor: cssDarkArray.entryColour,
+        backgroundColor: cssLightArray.entryColour,
         textAlign: 'center',
         color: 'lightgray'
     }

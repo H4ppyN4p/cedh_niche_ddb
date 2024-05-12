@@ -1,9 +1,9 @@
-import { cssDarkArray } from "../ColourConsts";
+import { cssLightArray } from "../ColourConsts";
 
 ///
 
     const Container = {
-        backgroundColor: cssDarkArray.headerColour,
+        backgroundColor: cssLightArray.headerColour,
         borderTop: '2px solid black',
         display: 'flex',
         justifyContent: 'center',

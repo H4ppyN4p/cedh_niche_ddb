@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import { cssDarkArray } from "../ColourConsts"
+import { cssLightArray } from "../ColourConsts"
 
 import black from "../images/symbolBlack.png"
 import red from "../images/symbolRed.png"
@@ -66,15 +66,15 @@ const DeckEntrySingleCommander = (props) => {
     }
 
     const DeckEntryHeader = {
-        backgroundColor: cssDarkArray.headerColour,
+        backgroundColor: cssLightArray.headerColour,
         left: '6%',
         width: '87%',
         margin: 'auto',
         position: 'absolute',
         paddingBottom: '50px',
-        color: 'lightgray',
-        border: `3px solid ${cssDarkArray.headerBorder}`,
-        borderRadius: cssDarkArray.entryBorderRadius,
+        color: cssLightArray.headerTextColour,
+        border: `3px solid ${cssLightArray.headerBorder}`,
+        borderRadius: cssLightArray.entryBorderRadius,
         boxShadow: '4px 4px 4px rgb(0 0 0 / 0.2)'
 
     }
@@ -91,11 +91,11 @@ const DeckEntrySingleCommander = (props) => {
         width: '74%',
         paddingTop: '7px',
         margin: 'auto',
-        backgroundColor: cssDarkArray.entryColour,
+        backgroundColor: cssLightArray.entryColour,
         height: '354px',
         position: 'relative',
-        border: `3px solid ${cssDarkArray.entryBorder}`,
-        borderRadius: cssDarkArray.entryBorderRadius,
+        border: `3px solid ${cssLightArray.entryBorder}`,
+        borderRadius: cssLightArray.entryBorderRadius,
         boxShadow: '10px 10px 5px rgb(60 20 20 / 0.2)'
     }
 
@@ -164,10 +164,10 @@ const DeckEntrySingleCommander = (props) => {
 
     const TagPrimary = {
         width: '90%',
-        backgroundColor: cssDarkArray.tagArchetypeColour,
+        backgroundColor: cssLightArray.tagArchetypeColour,
         textAlign: 'center',
         margin: '2px auto',
-        border: `2px solid ${cssDarkArray.tagsBorder}`,
+        border: `2px solid ${cssLightArray.tagsBorder}`,
         borderRadius: '6px',
         boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
 
@@ -175,10 +175,10 @@ const DeckEntrySingleCommander = (props) => {
 
     const TagResult = {
         width: '90%',
-        backgroundColor: cssDarkArray.tagResultColour,
+        backgroundColor: cssLightArray.tagResultColour,
         textAlign: 'center',
         margin: '2px auto',
-        border: `2px solid ${cssDarkArray.tagsBorder}`,
+        border: `2px solid ${cssLightArray.tagsBorder}`,
         borderRadius: '6px',
         boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
 
@@ -198,9 +198,9 @@ const DeckEntrySingleCommander = (props) => {
     const TagHolder = {
         width: '45%',
         margin: '2px',
-        backgroundColor: cssDarkArray.tagStrategiesColour,
+        backgroundColor: cssLightArray.tagStrategiesColour,
         height: '20px',
-        border: `2px solid ${cssDarkArray.tagsBorder}`,
+        border: `2px solid ${cssLightArray.tagsBorder}`,
         textAlign: 'center',
         borderRadius: '6px',
         boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
