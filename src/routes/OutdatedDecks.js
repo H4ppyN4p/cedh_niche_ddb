@@ -53,7 +53,7 @@ const OutdatedDecks = () => {
             <div style={EntryContainer}>
 
                 <div style={ExplainSection}>
-                    <p>This is for decks that haven't been updated in 3 months or more</p>
+                    <p>This is for decks that haven't been updated in 6 months or more</p>
                 </div>
                 
                 {decksToShow && decksToShow.map((e) => {

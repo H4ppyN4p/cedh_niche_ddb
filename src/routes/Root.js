@@ -88,7 +88,7 @@ const Root = () => {
 
                 <div style={NavStyleInner}>
                     <Link style={NavElement} to={'/'}>Fringe Decks</Link>
-                    <Link style={NavElement} to={'/outdateddecks'}>Outdated Decks</Link>
+                    <Link style={NavElement} to={'/staledecks'}>Stale Decks</Link>
                     <Link style={NavElement} to={'/newdecks'}>New Decks</Link>
                     <Link style={NavElement} to={'/metadecks'}>Meta Decks</Link>
                     <a style={NavElement} target="_blank" href="https://discord.gg/VhtyrYzk4r" >Submit a Deck</a>

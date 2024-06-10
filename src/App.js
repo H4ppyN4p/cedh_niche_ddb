@@ -36,7 +36,7 @@ const r_router = createBrowserRouter([
           element: <MainDecks />
         },
         {
-          path: "outdateddecks",
+          path: "staledecks",
           element: <OutdatedDecks />
         },
         {
