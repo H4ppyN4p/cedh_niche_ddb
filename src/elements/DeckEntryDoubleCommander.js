@@ -100,7 +100,7 @@ const DeckEntryHeader = {
     margin: 'auto',
     position: 'absolute',
     paddingBottom: '50px',
-    color: 'lightgray',
+    color: cssLightArray.headerTextColour,
     border: `3px solid ${cssLightArray.headerBorder}`,
     borderRadius: cssLightArray.entryBorderRadius,
     boxShadow: '4px 4px 4px rgb(0 0 0 / 0.2)'
@@ -272,7 +272,7 @@ const pipStyle = {
                 </div>
                 <p>By: {props.deck_author}</p>
                 <section style={IsColoursContainer}>
-                    <div>
+                    
 
                             { isWhite ? (
                                 <img alt="white pip" style={pipStyle} src={white} />
@@ -313,11 +313,12 @@ const pipStyle = {
                                 
                                 <img alt="green pip off" style={pipStyle} src={greenOff} />
                             }
-                    </div>
+                    
                 </section>
             </section>
             <section style={DeckEntryContainer}>
                 <div style={DeckEntryContainerText}>
+
                     <section style={ImageContainer}>
                         <div style={ImageBlock}></div>
                         
