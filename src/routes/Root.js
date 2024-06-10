@@ -28,11 +28,11 @@ const Root = () => {
 
     ///     
         const Container = {
-            backgroundColor: '#352538',
+            backgroundColor: cssLightArray.NavColour,
             zIndex: 50,
             width: '100%',
             position: 'fixed',
-            borderBottom: '2px solid black '
+            borderBottom: `2px solid ${cssLightArray.NavBorder}`  
         }
 
         const NavStyle = {
@@ -91,7 +91,7 @@ const Root = () => {
                     <Link style={NavElement} to={'/outdateddecks'}>Outdated Decks</Link>
                     <Link style={NavElement} to={'/newdecks'}>New Decks</Link>
                     <Link style={NavElement} to={'/metadecks'}>Meta Decks</Link>
-                    <a style={NavElement} href="https://discord.gg/upE7RXM3rp" >Submit a Deck</a>
+                    <a style={NavElement} target="_blank" href="https://discord.gg/VhtyrYzk4r" >Submit a Deck</a>
 
                 
                 { user ? (

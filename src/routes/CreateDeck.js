@@ -325,8 +325,8 @@ const CreateDeck = () => {
                         <option value="Food Chain">Food Chain</option>
                         <option value="Storm - deterministic">Deterministic Storm</option>
                         <option value="Storm - non deterministic">Non Deterministic Storm</option>
-                        <option value="spellslinger">spellslinger</option>
-                        <option value="Combo">combo</option>
+                        <option value="Spellslinger">Spellslinger</option>
+                        <option value="Combo">Combo</option>
                         <option value="Doomsday">Doomsday</option>
                         
                     </select>
@@ -345,8 +345,8 @@ const CreateDeck = () => {
                         <option value="Food Chain">Food Chain</option>
                         <option value="Storm - deterministic">Deterministic Storm</option>
                         <option value="Storm - non deterministic">Non Deterministic Storm</option>
-                        <option value="spellslinger">spellslinger</option>
-                        <option value="Combo">combo</option>
+                        <option value="Spellslinger">Spellslinger</option>
+                        <option value="Combo">Combo</option>
                         <option value="Doomsday">Doomsday</option>
                     </select>
                 </div>
@@ -364,8 +364,8 @@ const CreateDeck = () => {
                         <option value="Food Chain">Food Chain</option>
                         <option value="Storm - deterministic">Deterministic Storm</option>
                         <option value="Storm - non deterministic">Non Deterministic Storm</option>
-                        <option value="spellslinger">spellslinger</option>
-                        <option value="Combo">combo</option>
+                        <option value="Spellslinger">Spellslinger</option>
+                        <option value="Combo">Combo</option>
                         <option value="Doomsday">Doomsday</option>
                     </select>
                 </div>
@@ -383,8 +383,8 @@ const CreateDeck = () => {
                         <option value="Food Chain">Food Chain</option>
                         <option value="Storm - deterministic">Deterministic Storm</option>
                         <option value="Storm - non deterministic">Non Deterministic Storm</option>
-                        <option value="spellslinger">spellslinger</option>
-                        <option value="Combo">combo</option>
+                        <option value="Spellslinger">Spellslinger</option>
+                        <option value="Combo">Combo</option>
                         <option value="Doomsday">Doomsday</option>
                     </select>
                 </div>

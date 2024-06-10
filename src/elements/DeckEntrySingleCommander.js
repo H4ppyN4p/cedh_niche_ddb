@@ -203,8 +203,8 @@ const DeckEntrySingleCommander = (props) => {
         border: `2px solid ${cssLightArray.tagsBorder}`,
         textAlign: 'center',
         borderRadius: '6px',
-        boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)'
-
+        boxShadow: '2px 2px 2px rgb(0 0 0 / 0.2)',
+        overflow: 'auto'
 
     }
 

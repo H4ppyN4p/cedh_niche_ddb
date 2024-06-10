@@ -35,7 +35,7 @@ const OutdatedDecks = () => {
         minHeight: '40px',
         backgroundColor: cssLightArray.entryColour,
         textAlign: 'center',
-        color: 'lightgray'
+        color: 'black'
     }
 
     const EntryContainer = {

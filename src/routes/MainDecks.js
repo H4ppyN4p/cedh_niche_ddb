@@ -46,7 +46,8 @@ const MainDecks = () => {
         minHeight: '40px',
         backgroundColor: cssLightArray.entryColour,
         textAlign: 'center',
-        color: 'lightgray'
+        color: 'black'
+
     }
 
     ///
@@ -56,7 +57,7 @@ const MainDecks = () => {
             <div style={EntryContainer}>
 
                 <div style={ExplainSection}>
-                    <p>This is the main-page for decks; for new commanders released within the last set, see <Link style={{color: 'lightgray'}} to={NewDecks}>New Decks</Link></p>
+                    <p>This is the main-page for decks; for new commanders released within the last set, see <Link style={{color: 'black'}} to={NewDecks}>New Decks</Link></p>
                 </div>
 
                 {decksToShow && decksToShow.map((e) => {

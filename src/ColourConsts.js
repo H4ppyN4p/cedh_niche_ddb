@@ -16,16 +16,18 @@ const cssDarkArray = {
 }
 
 const cssLightArray = {
-    BgColour: '#75728f',
+    NavColour: '#544961',
+    NavBorder: '#352538',
+    BgColour: '#7a7594',
     headerColour: '#ecebf8',
     headerTextColour: '#2c1139',
     headerBorder: '#b9b6d4',
     headerBorderRadius: '7px',
-    entryColour: '#a29ec3',
-    entryBorder: '#b9b6d4',
+    entryColour: '#b9b6d4',
+    entryBorder: '#a29ec3',
     entryBorderRadius: '7px',
-    tagArchetypeColour: '#75728f',
-    tagResultColour: '#a29ec3',
+    tagArchetypeColour: '#544961',
+    tagResultColour: '#777190',
     tagStrategiesColour: '#ecebf8',
     tagsBorder: '#352538',
 }
