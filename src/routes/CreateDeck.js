@@ -326,9 +326,10 @@ const CreateDeck = () => {
                         <option value="Storm - deterministic">Deterministic Storm</option>
                         <option value="Storm - non deterministic">Non Deterministic Storm</option>
                         <option value="Spellslinger">Spellslinger</option>
-                        <option value="Combo">Combo</option>
+                        <option value="Solitaire">Solitaire</option>
                         <option value="Doomsday">Doomsday</option>
-                        
+                        <option value="Lands Matter">Lands Matter</option>
+                        <option value="Hermit Druid">Hermit Druid</option>
                     </select>
                 </div>
 
@@ -346,8 +347,10 @@ const CreateDeck = () => {
                         <option value="Storm - deterministic">Deterministic Storm</option>
                         <option value="Storm - non deterministic">Non Deterministic Storm</option>
                         <option value="Spellslinger">Spellslinger</option>
-                        <option value="Combo">Combo</option>
+                        <option value="Solitaire">Solitaire</option>
                         <option value="Doomsday">Doomsday</option>
+                        <option value="Lands Matter">Lands Matter</option>
+                        <option value="Hermit Druid">Hermit Druid</option>
                     </select>
                 </div>
 
@@ -358,15 +361,17 @@ const CreateDeck = () => {
                         <option value="AdNaus">Ad Naus</option>
                         <option value="Hatebears">Hatebears</option>
                         <option value="Reanimator">Reanimator</option>
-                        <option value="Hulk">Hulk</option>
+                        <option value="H½ulk">Hulk</option>
                         <option value="Polymorph">Polymorph</option>
                         <option value="Evolution">Evolution</option>
                         <option value="Food Chain">Food Chain</option>
                         <option value="Storm - deterministic">Deterministic Storm</option>
                         <option value="Storm - non deterministic">Non Deterministic Storm</option>
                         <option value="Spellslinger">Spellslinger</option>
-                        <option value="Combo">Combo</option>
+                        <option value="Solitaire">Solitaire</option>
                         <option value="Doomsday">Doomsday</option>
+                        <option value="Lands Matter">Lands Matter</option>
+                        <option value="Hermit Druid">Hermit Druid</option>
                     </select>
                 </div>
 
@@ -384,8 +389,10 @@ const CreateDeck = () => {
                         <option value="Storm - deterministic">Deterministic Storm</option>
                         <option value="Storm - non deterministic">Non Deterministic Storm</option>
                         <option value="Spellslinger">Spellslinger</option>
-                        <option value="Combo">Combo</option>
+                        <option value="Solitaire">Solitaire</option>
                         <option value="Doomsday">Doomsday</option>
+                        <option value="Lands Matter">Lands Matter</option>
+                        <option value="Hermit Druid">Hermit Druid</option>
                     </select>
                 </div>
 

@@ -267,7 +267,7 @@ const pipStyle = {
         <article style={DeckEntry}>
             <section style={DeckEntryHeader}>
                 <div style={DeckEntryHeaderText}>
-                    <h3>{props.deck_name}</h3>
+                   <a href={props.deck_link} target="_blank"> <h3>{props.deck_name}</h3> </a>
                 </div>
                 <p>By: {props.deck_author}</p>
                 <section style={IsColoursContainer}>
@@ -343,11 +343,11 @@ const pipStyle = {
                         <div style={TagHolder}>{props.tag_four}</div>
                     </section>
                     <section style={LinkSection}>
-                                <a href={props.deck_link}>
+                                <a target="_blank" href={props.deck_link}>
                                     <img alt="link to decklist" style={LinkImage} src={links} />
                                 </a>
                                 
-                                <a href={props.discord_link} style={DiscordLink}>
+                                <a target="_blank" href={props.discord_link} style={DiscordLink}>
                                     <img alt="link to discord server" style={DiscordImage} src={discordLogo} />
                                 </a>
                     </section>

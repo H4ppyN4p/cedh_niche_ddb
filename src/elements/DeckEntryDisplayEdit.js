@@ -312,8 +312,10 @@ const DeckEntryDisplayEdit = (props) => {
                             <option value="Storm - deterministic">Deterministic Storm</option>
                             <option value="Storm - non deterministic">Non Deterministic Storm</option>
                             <option value="Spellslinger">Spellslinger</option>
-                            <option value="Combo">Combo</option>
+                            <option value="Solitaire">Solitaire</option>
                             <option value="Doomsday">Doomsday</option>
+                            <option value="Lands Matter">Lands Matter</option>
+                            <option value="Hermit Druid">Hermit Druid</option>
                         </select>
                     </div>
 
@@ -332,8 +334,10 @@ const DeckEntryDisplayEdit = (props) => {
                             <option value="Storm - deterministic">Deterministic Storm</option>
                             <option value="Storm - non deterministic">Non Deterministic Storm</option>
                             <option value="Spellslinger">Spellslinger</option>
-                            <option value="Combo">Combo</option>
+                            <option value="Solitaire">Solitaire</option>
                             <option value="Doomsday">Doomsday</option>
+                            <option value="Lands Matter">Lands Matter</option>
+                            <option value="Hermit Druid">Hermit Druid</option>
                         </select>
                     </div>
 
@@ -352,8 +356,10 @@ const DeckEntryDisplayEdit = (props) => {
                             <option value="Storm - deterministic">Deterministic Storm</option>
                             <option value="Storm - non deterministic">Non Deterministic Storm</option>
                             <option value="Spellslinger">Spellslinger</option>
-                            <option value="Combo">Combo</option>
+                            <option value="Solitaire">Solitaire</option>
                             <option value="Doomsday">Doomsday</option>
+                            <option value="Lands Matter">Lands Matter</option>
+                            <option value="Hermit Druid">Hermit Druid</option>
                         </select>
                     </div>
 
@@ -372,8 +378,10 @@ const DeckEntryDisplayEdit = (props) => {
                             <option value="Storm - deterministic">Deterministic Storm</option>
                             <option value="Storm - non deterministic">Non Deterministic Storm</option>
                             <option value="Spellslinger">Spellslinger</option>
-                            <option value="Combo">Combo</option>
+                            <option value="Solitaire">Solitaire</option>
                             <option value="Doomsday">Doomsday</option>
+                            <option value="Lands Matter">Lands Matter</option>
+                            <option value="Hermit Druid">Hermit Druid</option>
                         </select>
                     </div>
                         
