@@ -86,6 +86,12 @@ const DeckEntrySingleCommander = (props) => {
         alignItems: 'center'
     }
 
+    const DeckAuthor = {
+        overflow: 'auto',
+        height: '19px'
+ 
+    }
+
     const DeckEntryContainer = {
         top: '67px',
         width: '74%',
@@ -227,7 +233,7 @@ const DeckEntrySingleCommander = (props) => {
                         <div style={DeckEntryHeaderText}>
                             <a target="_blank" href={props.deck_link}><h3>{props.deck_name}</h3></a>
                         </div>
-                        <p>By: {props.deck_author}</p>
+                        <p style={DeckAuthor}>By: {props.deck_author}</p>
                         <section style={IsColoursContainer}>
 
                                     { isWhite ? (

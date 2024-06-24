@@ -114,6 +114,11 @@ const DeckEntryHeaderText = {
     alignItems: 'center'
 }
 
+const DeckAuthor = {
+    overflow: 'auto',
+    height: '20px'
+}
+
 const DeckEntryContainer = {
     top: '67px',
     width: '74%',
@@ -269,7 +274,7 @@ const pipStyle = {
                 <div style={DeckEntryHeaderText}>
                    <a href={props.deck_link} target="_blank"> <h3>{props.deck_name}</h3> </a>
                 </div>
-                <p>By: {props.deck_author}</p>
+                <p style={DeckAuthor}>By: {props.deck_author}</p>
                 <section style={IsColoursContainer}>
                     
 
