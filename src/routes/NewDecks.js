@@ -53,7 +53,7 @@ const NewDecks = () => {
             <div style={EntryContainer}>
 
                 <div style={ExplainSection}>
-                    <p>This is for decks spearheaded by commanders who have been released within the last set</p>
+                    <p>This is for decks spearheaded by commanders who have been released within the last few sets to see if they're just a flash-in-the-pan or have staying power</p>
                 </div>
 
                 {decksToShow && decksToShow.map((e) => {
