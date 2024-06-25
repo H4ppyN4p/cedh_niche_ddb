@@ -112,7 +112,6 @@ const DeckEntryHeaderText = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '50%'
 }
 
 const DeckHeaderName = {
