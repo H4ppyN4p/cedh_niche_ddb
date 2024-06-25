@@ -61,7 +61,11 @@ const r_router = createBrowserRouter([
           element: <EditDecks />,
           loader: checkAuthCredent
         },     
-      
+        {
+          path: "*",
+          element: <MainDecks />
+        }
+        
       ]
     }
   ]);
