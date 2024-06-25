@@ -14,3 +14,7 @@ export async function checkAuthCredent() {
     }
     
 }
+
+export async function defaultRedirect(){
+    return redirect("/")
+}

@@ -19,7 +19,7 @@ import EditDecks from "./routes/EditDecks";
 //firebase hooks
 
 //loader functions
-import {checkAuthCredent} from "./LoaderFunctions"
+import {checkAuthCredent, defaultRedirect} from "./LoaderFunctions"
 import MetaDecks from "./routes/MetaDecks";
 
 
@@ -61,12 +61,11 @@ const r_router = createHashRouter([
           element: <EditDecks />,
           loader: checkAuthCredent
         },     
-        {
-          path: "*",
-          element: <MainDecks />
-        }
-        
       ]
+    }, 
+    {
+      path: "*",
+      loader: defaultRedirect
     }
   ]);
 
