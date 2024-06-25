@@ -1,7 +1,7 @@
 import React from "react";
 
 //Router imports
-import { createBrowserRouter, RouterProvider} from "react-router-dom";
+import { createHashRouter, RouterProvider} from "react-router-dom";
 
 //routes
 import ErrorPage from "./routes/ErrorPage";
@@ -25,7 +25,7 @@ import MetaDecks from "./routes/MetaDecks";
 
 
 //Router object:
-const r_router = createBrowserRouter([
+const r_router = createHashRouter([
     {
       path: "/",
       element: <Root />,
