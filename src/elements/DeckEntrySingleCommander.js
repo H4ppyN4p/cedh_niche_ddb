@@ -79,11 +79,20 @@ const DeckEntrySingleCommander = (props) => {
 
     }
 
+
     const DeckEntryHeaderText = {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+    }
+
+    const DeckHeaderName = {
+        height: '1.4rem',
+        overflow: 'auto',
+        overflowX: 'hidden',
+        overflowWrap: 'break-word',
+        fontSize: '1.08rem'
     }
 
     const DeckAuthor = {
@@ -231,7 +240,7 @@ const DeckEntrySingleCommander = (props) => {
                 <article style={DeckEntry}>
                     <section style={DeckEntryHeader}>
                         <div style={DeckEntryHeaderText}>
-                            <a target="_blank" href={props.deck_link}><h3>{props.deck_name}</h3></a>
+                            <a target="_blank" href={props.deck_link}><h3 style={DeckHeaderName}>{props.deck_name}</h3></a>
                         </div>
                         <p style={DeckAuthor}>By: {props.deck_author}</p>
                         <section style={IsColoursContainer}>

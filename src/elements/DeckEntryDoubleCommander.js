@@ -103,15 +103,24 @@ const DeckEntryHeader = {
     color: cssLightArray.headerTextColour,
     border: `3px solid ${cssLightArray.headerBorder}`,
     borderRadius: cssLightArray.entryBorderRadius,
-    boxShadow: '4px 4px 4px rgb(0 0 0 / 0.2)'
-
+    boxShadow: '4px 4px 4px rgb(0 0 0 / 0.2)',
+    
 }
 
 const DeckEntryHeaderText = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+}
+
+const DeckHeaderName = {
+    height: '1.4rem',
+    overflowInline: 'auto',
+    overflowX: 'hidden',
+    overflowWrap: 'break-word',
+    fontSize: '1.08rem'
+
 }
 
 const DeckAuthor = {
@@ -272,7 +281,7 @@ const pipStyle = {
         <article style={DeckEntry}>
             <section style={DeckEntryHeader}>
                 <div style={DeckEntryHeaderText}>
-                   <a href={props.deck_link} target="_blank"> <h3>{props.deck_name}</h3> </a>
+                   <a href={props.deck_link} target="_blank"> <h3 style={DeckHeaderName}>{props.deck_name}</h3> </a>
                 </div>
                 <p style={DeckAuthor}>By: {props.deck_author}</p>
                 <section style={IsColoursContainer}>

@@ -1,7 +1,7 @@
 import React from "react";
 
 //Router imports
-import { createBrowserRouter, RouterProvider} from "react-router-dom";
+import { createHashRouter, RouterProvider} from "react-router-dom";
 
 //routes
 import ErrorPage from "./routes/ErrorPage";
@@ -19,13 +19,13 @@ import EditDecks from "./routes/EditDecks";
 //firebase hooks
 
 //loader functions
-import {checkAuthCredent} from "./LoaderFunctions"
+import {checkAuthCredent, defaultRedirect} from "./LoaderFunctions"
 import MetaDecks from "./routes/MetaDecks";
 
 
 
 //Router object:
-const r_router = createBrowserRouter([
+const r_router = createHashRouter([
     {
       path: "/",
       element: <Root />,
@@ -61,8 +61,11 @@ const r_router = createBrowserRouter([
           element: <EditDecks />,
           loader: checkAuthCredent
         },     
-      
       ]
+    }, 
+    {
+      path: "*",
+      loader: defaultRedirect
     }
   ]);
 
