@@ -21,7 +21,6 @@ import links from "../images/hyperlink-icon.png"
 
 const DeckEntryDoubleCommander = (props) => {
 
-    const aChange = someText
     const [isWhite] = useState(props.is_white)
     const [isBlue] = useState(props.is_blue)
     const [isBlack] = useState(props.is_black)
